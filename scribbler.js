@@ -24,7 +24,7 @@ if (document.getElementsByClassName('demo').length > 0) {
                 
             CONTACTS
                     Email: denysov.kos@gmail.com`;
-  var speed = 60;
+  var speed = 90;
 
   function typeItOut () {
     if (i < txt.length) {
