@@ -23,8 +23,8 @@ if (document.getElementsByClassName('demo').length > 0) {
                     I design, build, operate & sometimes rescue web applications. Have a project you'd like to discuss? Please, contact me via email!
                 
             CONTACTS
-                    Email: k@denysov.com`;
-  var speed = 50;
+                    Email: k@denysov.me`;
+  var speed = 30;
 
   function typeItOut () {
     if (i < txt.length) {
@@ -34,7 +34,7 @@ if (document.getElementsByClassName('demo').length > 0) {
     }
   }
 
-  setTimeout(typeItOut, 500);
+  setTimeout(typeItOut, 300);
 }
 
 // toggle tabs on codeblock
