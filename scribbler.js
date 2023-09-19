@@ -19,12 +19,12 @@ if (document.getElementsByClassName('demo').length > 0) {
                     Kostiantyn Denysov
 
             DESCRIPTION
-                    Hey, I'm a software developer from Kyiv, Ukraine. I can help you build your next product.
+                    Hey, I'm a software developer from Berlin, Germany. I can help you build your next product.
                     I design, build, operate & sometimes rescue web applications. Have a project you'd like to discuss? Please, contact me via email!
                 
             CONTACTS
-                    Email: denysov.kos@gmail.com`;
-  var speed = 180;
+                    Email: k@denysov.com`;
+  var speed = 250;
 
   function typeItOut () {
     if (i < txt.length) {
