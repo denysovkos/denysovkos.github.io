@@ -24,7 +24,7 @@ if (document.getElementsByClassName('demo').length > 0) {
                 
             CONTACTS
                     Email: k@denysov.com`;
-  var speed = 250;
+  var speed = 50;
 
   function typeItOut () {
     if (i < txt.length) {
@@ -34,7 +34,7 @@ if (document.getElementsByClassName('demo').length > 0) {
     }
   }
 
-  setTimeout(typeItOut, 1000);
+  setTimeout(typeItOut, 500);
 }
 
 // toggle tabs on codeblock
