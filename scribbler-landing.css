@@ -7,6 +7,7 @@
 
 nav {
   background-color: var(--bg-color);
+  grid-template-columns: 150px auto;
 }
 
 /* hero section */
@@ -116,6 +117,13 @@ nav {
 }
 
 /* callout section */
+.callout-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
 .callout {
   text-align: center;
   padding: 1rem 0 3rem 0;

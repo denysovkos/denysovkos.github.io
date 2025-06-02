@@ -171,7 +171,6 @@ hr {
 /* menu */
 nav {
   display: grid;
-  grid-template-columns: 70px auto;
 }
 
 .menu {
