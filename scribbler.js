@@ -19,8 +19,8 @@ if (document.getElementsByClassName('demo').length > 0) {
                     Kostiantyn Denysov
 
             DESCRIPTION
-                    Hey, I'm a software developer from Berlin, Germany. I can help you build your next product.
-                    I design, build, operate & sometimes rescue web applications. Have a project you'd like to discuss? Please, contact me via email!
+                    Hey, I'm a Technical Lead from Berlin, Germany, leading release engineering and developer experience at Deel.
+                    I design, build, operate & sometimes rescue backend systems. Want to talk? Please, contact me via email!
                 
             CONTACTS
                     Email: k@denysov.me`;

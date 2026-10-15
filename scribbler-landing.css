@@ -133,6 +133,11 @@ nav {
   margin-top: 0.5rem;
 }
 
+/* projects section */
+.projects {
+  padding: 2rem 0 3rem 0;
+}
+
 /* changelog section */
 .changelog {
   background-color: var(--bg-color);
@@ -145,7 +150,8 @@ nav {
 
 .changelog__meta {
   max-width: 194px;
-  flex-basis: 25%;
+  flex: 0 0 25%;
+  padding-right: 1.5rem;
 }
 
 .changelog__meta small {
