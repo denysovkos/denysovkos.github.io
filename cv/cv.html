@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kostiantyn Denysov - CV</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    @page { size: A4; margin: 14mm 15mm 14mm 15mm; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito Sans', 'Inter', sans-serif;
+      font-size: 9.6pt;
+      line-height: 1.38;
+      color: #1f1f1f;
+    }
+    a { color: inherit; text-decoration: none; }
+    header { display: flex; justify-content: space-between; align-items: flex-start; }
+    h1 { font-size: 20pt; font-weight: 800; letter-spacing: 0.5px; margin: 0; }
+    .role { font-size: 12pt; margin: 2px 0 8px; }
+    .contacts { display: grid; grid-template-columns: repeat(3, auto); gap: 3px 18px; justify-content: start; font-size: 9pt; }
+    .photo { width: 30mm; height: 30mm; border-radius: 50%; object-fit: cover; }
+    h2 {
+      font-size: 10.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #1f1f1f; padding-bottom: 2px; margin: 14px 0 6px;
+    }
+    p { margin: 0; }
+    .job { margin-bottom: 8px; break-inside: avoid; }
+    .job__head { display: flex; justify-content: space-between; }
+    .job__title { font-weight: 800; text-transform: uppercase; }
+    .job__title em { font-weight: 400; text-transform: none; }
+    .job__side { text-align: right; white-space: nowrap; padding-left: 12px; }
+    .job__body { display: flex; justify-content: space-between; }
+    ul { margin: 2px 0 0; padding-left: 14px; }
+    li { margin: 1px 0; }
+    .loc { white-space: nowrap; padding-left: 12px; text-align: right; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; }
+    .grid3 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px 24px; }
+    .muted { color: #555; }
+    .edu { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>KOSTIANTYN DENYSOV</h1>
+      <div class="role">Technical Lead</div>
+      <div class="contacts">
+        <span>denysov.kos@gmail.com</span>
+        <span>+49 176 86031633</span>
+        <span>Berlin, Germany</span>
+        <a href="https://www.linkedin.com/in/denysovkos/">linkedin.com/in/denysovkos</a>
+        <a href="https://github.com/denysovkos">github.com/denysovkos</a>
+        <a href="https://www.denysov.me">denysov.me</a>
+        <span>Ukrainian</span>
+        <span>Permanent residency in Germany</span>
+      </div>
+    </div>
+    <img class="photo" src="photo.jpg" alt="">
+  </header>
+
+  <h2>Summary</h2>
+  <p>
+    Technical Lead with over 11 years in backend engineering and system architecture, now leading release
+    management and developer experience at Deel. Track record across Fintech, HR tech and E-Commerce, in both
+    startups and enterprises. Focused on scalable microservices, cloud platforms, reliable delivery pipelines and
+    internal tooling that lets engineering organizations ship faster with fewer incidents.
+  </p>
+
+  <h2>Experience</h2>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Technical Lead, <em><a href="https://www.deel.com">Deel</a></em></span><span class="job__side">09/2025 – Present</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Lead the Release Management team, owning release management and developer experience from a people, process and operational perspective.</li>
+        <li>Drive the internal release tooling platform: Release Control Center, Migrations Control Center, Cherry-pick Bot and Dev-Toolkit.</li>
+        <li>Authored the Migrations Control Center technical design (NestJS with hexagonal architecture, Next.js, Nx monorepo) to make database migrations visible and controllable across releases.</li>
+        <li>Run postmortems for release incidents and turn findings into process and tooling changes that improve release reliability.</li>
+        <li>Coordinate cross-functionally with product engineering teams to improve delivery efficiency and organizational execution.</li>
+      </ul>
+      <span class="loc">Berlin, Germany</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Senior Backend Engineer, <em>Enpal</em></span><span class="job__side">02/2025 – 08/2025</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Delivered scalable, event-driven services using .NET, MongoDB and Azure.</li>
+        <li>Built critical features with a focus on maintainability and performance.</li>
+      </ul>
+      <span class="loc">Berlin, Germany</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Freelance Backend Engineer <em>(Contract)</em></span><span class="job__side">09/2024 – 02/2025</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Led architecture and delivery of internal tools and data pipelines for early-stage startups.</li>
+        <li>Delivered all projects as scoped.</li>
+      </ul>
+      <span class="loc">Remote</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Staff Engineer, <em>Join Solutions</em></span><span class="job__side">02/2024 – 09/2024</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Refactored application processing logic and introduced permission-based access, increasing application volume by 15%.</li>
+        <li>Delivered a scalable microservices architecture using gRPC, Docker and Kubernetes, boosting system performance by 25%.</li>
+        <li>Mentored engineers, enforced code review policies and drove a 20% improvement in code quality.</li>
+        <li>Led cross-functional releases with a 95% on-time delivery rate.</li>
+        <li>Optimized database access for critical queries, achieving up to 1000x performance gains.</li>
+      </ul>
+      <span class="loc">Berlin, Germany</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Senior Backend Software Engineer, <em>Join Solutions</em></span><span class="job__side">12/2022 – 01/2024</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Developed scalable backend services primarily in TypeScript, improving reliability and performance across multiple projects.</li>
+        <li>Designed and implemented gRPC APIs between backend systems, improving inter-service communication efficiency by 50%.</li>
+        <li>Optimized critical database operations, achieving up to 1000x faster query execution.</li>
+      </ul>
+      <span class="loc">Berlin, Germany</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Senior Software Engineer, <em>Pixsy</em></span><span class="job__side">09/2021 – 12/2022</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Developed image comparison algorithms, significantly improving image match accuracy.</li>
+        <li>Automated data analysis workflows, reducing manual overhead by 50%.</li>
+        <li>Established a testing culture, cutting production bugs by 60%.</li>
+      </ul>
+      <span class="loc">Berlin, Germany</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Backend Technical Lead, <em>Sonect</em></span><span class="job__side">03/2020 – 08/2021</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Delivered a white-label fintech solution for BNL and led the migration to microservices.</li>
+        <li>Migrated infrastructure to bare metal for performance and cost gains.</li>
+        <li>Integrated with EU financial systems and promoted high code quality standards.</li>
+      </ul>
+      <span class="loc">Zurich, Switzerland</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Backend Technical Lead, <em>BillBeez</em></span><span class="job__side">05/2019 – 03/2020</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Launched a new fintech platform on scalable Node.js and MySQL microservices.</li>
+        <li>Designed secure RESTful APIs and performance-tuned backend processes.</li>
+      </ul>
+      <span class="loc">Kyiv, Ukraine</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Fullstack Software Engineer, <em>Thomas Cook</em></span><span class="job__side">10/2017 – 05/2019</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Developed web applications with Angular and React in JavaScript and TypeScript.</li>
+        <li>Designed and implemented RESTful APIs using Node.js and Express on MySQL and MongoDB.</li>
+      </ul>
+      <span class="loc">Kyiv, Ukraine</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Software Engineer, <em>Eze.tech (consulting, short contract)</em></span><span class="job__side">08/2017 – 10/2017</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Developed backend systems and RESTful APIs (Node.js, Express) for a ticket reselling e-commerce platform.</li>
+      </ul>
+      <span class="loc">Kyiv, Ukraine</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Software Engineer, <em>Intersog</em></span><span class="job__side">04/2017 – 08/2017</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Built GDPR-aligned personal data search for the Prefender project, optimizing search algorithms and data storage.</li>
+      </ul>
+      <span class="loc">Kyiv, Ukraine</span>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="job__head"><span class="job__title">Software Engineer, <em>Leantegra</em></span><span class="job__side">01/2016 – 04/2017</span></div>
+    <div class="job__body">
+      <ul>
+        <li>Migrated the CVO portal from Angular 1.5 to React and built a real-time location service and analytics platform.</li>
+        <li>Full-stack development with Node.js, Express, Sequelize, MySQL, PostgreSQL and MongoDB, plus data visualization with NVD3.</li>
+      </ul>
+      <span class="loc">Kyiv, Ukraine</span>
+    </div>
+  </div>
+
+  <h2>Skills</h2>
+  <div class="grid2">
+    <span><b>Languages:</b> TypeScript/JavaScript (Node.js), Go, C#/.NET, SQL, Bash</span>
+    <span><b>Frameworks:</b> NestJS, Express, Fastify, Next.js, Nx</span>
+    <span><b>APIs:</b> REST, gRPC, GraphQL, WebSockets, event-driven architecture</span>
+    <span><b>Data:</b> PostgreSQL, MySQL, MongoDB, query optimization, PL/pgSQL</span>
+    <span><b>Cloud &amp; infra:</b> AWS, GCP, Azure, Docker, Kubernetes, Terraform, Pulumi</span>
+    <span><b>Messaging:</b> Kafka, RabbitMQ</span>
+    <span><b>Delivery:</b> release management, CI/CD, migrations, incident postmortems</span>
+    <span><b>Quality &amp; security:</b> Jest, Mocha, integration testing, OWASP, JWT, OAuth</span>
+  </div>
+
+  <h2>Education</h2>
+  <div class="edu"><span><b>B.S. Computer Science</b>, National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"</span><span class="job__side">09/2017 – 06/2021</span></div>
+  <div class="edu"><span><b>M.Fin. Finance</b>, Kyiv National Economic University</span><span class="job__side">09/2004 – 06/2009</span></div>
+
+  <h2>Languages</h2>
+  <div class="grid3">
+    <span>English <span class="muted">· Advanced</span></span>
+    <span>German <span class="muted">· Elementary</span></span>
+    <span>Ukrainian <span class="muted">· Native</span></span>
+    <span>Russian <span class="muted">· Native</span></span>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="grid2" style="grid-template-columns: repeat(3, 1fr);">
+    <a href="https://www.migraine.club">Migraine.Club</a>
+    <a href="https://www.sshare.dev">sshare.dev · URL shortener</a>
+    <a href="https://www.denysov.me">denysov.me · personal site</a>
+  </div>
+</body>
+</html>
