@@ -133,6 +133,11 @@ nav {
   margin-top: 0.5rem;
 }
 
+/* projects section */
+.projects {
+  padding: 2rem 0 3rem 0;
+}
+
 /* changelog section */
 .changelog {
   background-color: var(--bg-color);
