@@ -1,0 +1,18 @@
+# Kostiantyn Denysov
+
+> Technical Lead at Deel in Berlin, leading release engineering and developer experience for a globally distributed engineering organization. About ten years in backend and platform engineering, from fullstack engineer to backend technical lead, staff engineer and now release engineering lead.
+
+## Profile
+- [Website](https://denysov.me/): summary, track record, experience, projects, contact
+- [CV (PDF)](https://denysov.me/denysov_k_cv.pdf)
+- [LinkedIn](https://www.linkedin.com/in/denysovkos/)
+- [GitHub](https://github.com/denysovkos)
+- [Book a 15-minute call](https://cal.com/kostiantyn-denysov-soycqg/15min)
+
+## Focus
+Release management, CI/CD, database migrations, internal developer tooling, blameless incident reviews, system design, mentoring. TypeScript, Node.js, Go, C#/.NET, Kubernetes, Docker, Terraform, Pulumi, AWS, GCP, Azure, Kafka, PostgreSQL, MongoDB.
+
+## Projects
+- [Migraine.Club](https://www.migraine.club): evidence-first, privacy-first migraine diary PWA
+- [Parley](https://parley.trading): open-source terminal app where six AI investor personas debate a stock
+- [Claude Life OS](https://github.com/denysovkos/claude-life-os): open-source Claude skill for personal paperwork, MIT

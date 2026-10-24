@@ -1,282 +1,607 @@
 <!doctype html>
 <html lang="en">
-  <head>
-      <meta charset="utf-8">
-      <meta name="description" content="Kostiantyn Denysov, Technical Lead in Berlin. Release engineering, developer experience and backend architecture with Node.js, TypeScript, Go and Kubernetes.">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Kostiantyn Denysov - Technical Lead</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
-      <link rel="stylesheet" href="scribbler-global.css">
-      <link rel="stylesheet" href="scribbler-landing.css">
-  </head>
-  <body>
-    <nav>
-      <div class="logo"></div>
-      <ul class="menu">
-        <div class="menu__item toggle"><span></span></div>
-        <li class="menu__item"><a href="https://www.linkedin.com/in/denysovkos/" target="_blank" class="link link--dark"><i class="fa fa-linkedin"></i> Linkedin</a></li>
-        <li class="menu__item"><a href="https://github.com/denysovkos" target="_blank" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
-      </ul>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kostiantyn Denysov · Technical Lead, Release Engineering · Berlin</title>
+<meta name="description" content="Kostiantyn Denysov is a Technical Lead at Deel in Berlin, leading release engineering and developer experience. 10 years in backend and platform engineering. Book a 15-minute call or download the CV.">
+<meta name="author" content="Kostiantyn Denysov">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://denysov.me/">
+<link rel="sitemap" type="application/xml" href="https://denysov.me/sitemap.xml">
+<link rel="me" href="https://www.linkedin.com/in/denysovkos/">
+<link rel="me" href="https://github.com/denysovkos">
+<meta name="theme-color" content="#FAF8F4">
+<meta name="color-scheme" content="light dark">
+<meta name="format-detection" content="telephone=no">
+
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://denysov.me/">
+<meta property="og:site_name" content="Kostiantyn Denysov">
+<meta property="og:title" content="Kostiantyn Denysov · Technical Lead, Release Engineering">
+<meta property="og:description" content="I help engineering teams ship faster, and safer. Release engineering, developer experience and backend architecture, Berlin.">
+<meta property="og:image" content="https://denysov.me/og.png">
+<meta property="og:image:secure_url" content="https://denysov.me/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kostiantyn Denysov, Technical Lead at Deel, Berlin. I help engineering teams ship faster, and safer.">
+<meta property="profile:first_name" content="Kostiantyn">
+<meta property="profile:last_name" content="Denysov">
+<meta property="profile:username" content="denysovkos">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kostiantyn Denysov · Technical Lead, Release Engineering">
+<meta name="twitter:description" content="I help engineering teams ship faster, and safer. Berlin.">
+<meta name="twitter:image" content="https://denysov.me/og.png">
+<meta name="twitter:image:alt" content="Kostiantyn Denysov, Technical Lead at Deel, Berlin. I help engineering teams ship faster, and safer.">
+
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<script>
+/* Applies a saved manual theme before first paint, flags JS for reveal styles. */
+(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<link rel="preload" href="fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://denysov.me/#website",
+   "url": "https://denysov.me/",
+   "name": "Kostiantyn Denysov",
+   "inLanguage": "en",
+   "publisher": {
+    "@id": "https://denysov.me/#person"
+   }
+  },
+  {
+   "@type": "ProfilePage",
+   "@id": "https://denysov.me/#profile",
+   "url": "https://denysov.me/",
+   "name": "Kostiantyn Denysov · Technical Lead, Release Engineering",
+   "isPartOf": {
+    "@id": "https://denysov.me/#website"
+   },
+   "mainEntity": {
+    "@id": "https://denysov.me/#person"
+   },
+   "inLanguage": "en",
+   "dateModified": "2026-10-24"
+  },
+  {
+   "@type": "Person",
+   "@id": "https://denysov.me/#person",
+   "name": "Kostiantyn Denysov",
+   "givenName": "Kostiantyn",
+   "familyName": "Denysov",
+   "alternateName": [
+    "K. Denysov",
+    "denysovkos"
+   ],
+   "url": "https://denysov.me/",
+   "image": "https://denysov.me/og.png",
+   "jobTitle": "Technical Lead",
+   "description": "Technical Lead at Deel in Berlin, leading release engineering and developer experience for a globally distributed engineering organization.",
+   "worksFor": {
+    "@type": "Organization",
+    "name": "Deel",
+    "url": "https://www.deel.com"
+   },
+   "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Technical Lead, Release Engineering",
+    "occupationLocation": {
+     "@type": "City",
+     "name": "Berlin"
+    },
+    "skills": "Release management, CI/CD, developer experience, system design, Kubernetes, TypeScript, Go"
+   },
+   "homeLocation": {
+    "@type": "Place",
+    "address": {
+     "@type": "PostalAddress",
+     "addressLocality": "Berlin",
+     "addressCountry": "DE"
+    }
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Berlin",
+    "addressCountry": "DE"
+   },
+   "knowsLanguage": [
+    "uk",
+    "en",
+    "de",
+    "ru"
+   ],
+   "knowsAbout": [
+    "Release engineering",
+    "Release management",
+    "Developer experience",
+    "CI/CD",
+    "Database migrations",
+    "Internal developer tooling",
+    "Incident management",
+    "System design",
+    "Engineering leadership",
+    "TypeScript",
+    "Node.js",
+    "Go",
+    "C#",
+    "Kubernetes",
+    "Docker",
+    "Terraform",
+    "Pulumi",
+    "AWS",
+    "GCP",
+    "Azure",
+    "Kafka",
+    "RabbitMQ",
+    "PostgreSQL",
+    "MongoDB",
+    "gRPC"
+   ],
+   "alumniOf": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Kyiv Polytechnic Institute"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Kyiv National Economic University"
+    }
+   ],
+   "sameAs": [
+    "https://www.linkedin.com/in/denysovkos/",
+    "https://github.com/denysovkos"
+   ]
+  },
+  {
+   "@type": "SoftwareApplication",
+   "name": "Migraine.Club",
+   "url": "https://www.migraine.club",
+   "applicationCategory": "HealthApplication",
+   "operatingSystem": "Web",
+   "description": "Evidence-first, privacy-first migraine diary with doctor-ready summaries based on HIT-6, MIDAS and MSQ-21.",
+   "author": {
+    "@id": "https://denysov.me/#person"
+   }
+  },
+  {
+   "@type": "SoftwareApplication",
+   "name": "Parley",
+   "url": "https://parley.trading",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Terminal",
+   "description": "Open-source, local-first terminal app where six AI investor personas debate a stock and return a confidence-weighted verdict. Educational only.",
+   "author": {
+    "@id": "https://denysov.me/#person"
+   }
+  },
+  {
+   "@type": "SoftwareSourceCode",
+   "name": "Claude Life OS",
+   "codeRepository": "https://github.com/denysovkos/claude-life-os",
+   "license": "https://opensource.org/licenses/MIT",
+   "description": "Open-source Claude skill that turns Gmail, Google Drive and Supabase into a personal paperwork system for documents, contracts and deadlines.",
+   "author": {
+    "@id": "https://denysov.me/#person"
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <!-- Stencil K: the letter is knocked out of the tile, so the page background shows through it. -->
+  <symbol id="k-mark" viewBox="0 0 48 48">
+    <mask id="k-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
+      <rect width="48" height="48" fill="#fff"/>
+      <rect x="12" y="10" width="6.5" height="28" fill="#000"/>
+      <polygon points="21,24 31,10 38.5,10 28.5,24 38.5,38 31,38" fill="#000"/>
+    </mask>
+    <rect width="48" height="48" rx="12" fill="var(--logo-tile)" mask="url(#k-cut)"/>
+    <rect x="36" y="8" width="4" height="4" fill="#7AA2FF"/>
+    <rect x="36" y="36" width="4" height="4" fill="#F5C542"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top">
+      <svg class="logo" aria-hidden="true"><use href="#k-mark"/></svg>
+      <span class="brand-name"><b>K. Denysov</b><span><i>&gt;_</i> technical lead</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="navlink" href="#work">Work</a>
+      <a class="navlink" href="#experience">Experience</a>
+      <a class="navlink" href="#projects">Projects</a>
+      <a class="navlink" href="#contact">Contact</a>
     </nav>
-    <div class="hero">
-      <h1 class="hero__title">Kostiantyn Denysov</h1>
-      <p class="hero__description">Technical Lead · Release Engineering &amp; Developer Experience</p>
+    <div class="head-actions">
+      <button class="icon-btn theme-head" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="https://cal.com/kostiantyn-denysov-soycqg/15min?user=kostiantyn-denysov-soycqg&amp;overlayCalendar=true" target="_blank" rel="noopener">Book a call</a>
+      <button class="icon-btn menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="sheet">Menu</button>
     </div>
-    <div class="hero__terminal">
-      <pre>
-        <code class="shell-session demo">> ~ $ </code>
-      </pre>
-    </div>
-    <div class="wrapper">
-      <div class="feature">
-        <div class="feature__item">
-          <h3 class="section__title">Languages</h3>
-          <p>TypeScript/JavaScript (expert), Go &amp; C#/.NET (proficient), SQL, Bash</p>
+  </div>
+  <div class="sheet" id="sheet" hidden>
+    <a href="#work"><span>Work</span><span class="mono muted" aria-hidden="true">01</span></a>
+    <a href="#experience"><span>Experience</span><span class="mono muted" aria-hidden="true">03</span></a>
+    <a href="#projects"><span>Projects</span><span class="mono muted" aria-hidden="true">04</span></a>
+    <a href="#contact"><span>Contact</span><span class="mono muted" aria-hidden="true">07</span></a>
+    <div class="sheet-row"><span class="mono">Theme</span><button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme" style="width:auto;padding:0 16px;font-family:var(--mono);font-size:13px"><span data-theme-name>Light</span></button></div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Kostiantyn Denysov · Technical Lead at Deel, Berlin</p>
+        <h1 class="h1" id="hero-h">I help engineering teams ship faster, and <span class="u">safer</span>.</h1>
+        <!-- Alternative headline B: Release engineering and developer experience at global <span class="u">scale</span>. -->
+        <p class="sub">Release engineering, developer experience and backend architecture for a globally distributed engineering organization. <strong>Ten years</strong> of building the systems and teams behind reliable delivery.</p>
+        <p class="print-only print-contact">Berlin · denysov.me · linkedin.com/in/denysovkos · github.com/denysovkos · Ukrainian, English, German, Russian</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="https://cal.com/kostiantyn-denysov-soycqg/15min?user=kostiantyn-denysov-soycqg&amp;overlayCalendar=true" target="_blank" rel="noopener">Book a 15-minute intro call <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-secondary" href="https://denysov.me/denysov_k_cv.pdf" download>Download CV <span class="tag" aria-hidden="true">PDF</span></a>
         </div>
-        <div class="feature__item">
-          <h3 class="section__title">Cloud & Infrastructure</h3>
-          <p>AWS, GCP, Azure, Docker, Kubernetes, Terraform, Pulumi, Kafka, RabbitMQ, PostgreSQL, MongoDB</p>
-        </div>
-        <div class="feature__item">
-          <h3 class="section__title">Release Engineering</h3>
-          <p>Release management, CI/CD, database migrations, internal developer tooling and incident postmortems</p>
-        </div>
-        <div class="feature__item">
-          <h3 class="section__title">Architecture & Planning</h3>
-          <p>System design, trade-off analysis, risk assessment, roadmap alignment</p>
-        </div>
-        <div class="feature__item">
-          <h3 class="section__title">Leadership</h3>
-          <p>Leading and growing teams, mentoring engineers, code review culture and cross-functional delivery</p>
-        </div>
-        <div class="feature__item">
-          <h3 class="section__title">Communication</h3>
-          <p>Clear, async-first communicator experienced in cross-functional collaboration across distributed teams</p>
+        <div class="quiet">
+          <a href="https://www.linkedin.com/in/denysovkos/" target="_blank" rel="noopener me">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/denysovkos" target="_blank" rel="noopener me">GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
+      <div class="hero-media">
+        <a class="pipe" href="#now">
+          <span class="pipe-top"><b>Now · Deel</b><span>Technical Lead since Sep 2025</span></span>
+          <span class="pipe-now">
+            <span class="pipe-now-label">Currently shipping</span>
+            <span class="pipe-now-text">An AI-driven deployment pipeline that replaces big, manually signed-off releases with frequent, safe deploys.</span>
+            <span class="pipe-tags"><span>AI risk-scoring</span><span>Automated error tracing</span><span>Self-service releases</span></span>
+          </span>
+          <span class="pipe-foot"><span>Berlin · <span data-clock>CET</span></span><span class="pipe-more">What I do at Deel <span aria-hidden="true">↓</span></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <div class="callout-row">
-        <div class="callout">
-          <p>Download my CV</p>
-          <a target="_blank" href="./denysov_k_cv.pdf" class="button--primary">Download</a>
+  <section class="proof" aria-label="Selected results">
+    <div class="wrap">
+      <div class="proof-head"><b>Track record</b></div>
+      <dl class="proof-grid">
+        <div class="stat stat-key stat-word"><dt class="sr-only">Deployment</dt><dd class="num">AI-driven</dd><dd class="stat-cap">deployment pipeline replacing manual release sign-offs, with risk-scoring and automated error tracing</dd><dd class="stat-src">Deel · now</dd></div>
+        <div class="stat stat-word"><dt class="sr-only">Leadership</dt><dd class="num">Team lead</dd><dd class="stat-cap">leading and coaching release managers and engineers for a globally distributed org</dd><dd class="stat-src">Deel · now</dd></div>
+        <div class="stat stat-word"><dt class="sr-only">Incident practice</dt><dd class="num">Blameless</dd><dd class="stat-cap">incident review practice that turns lessons into lasting improvements</dd><dd class="stat-src">Deel · now</dd></div>
+        <div class="stat"><dt class="sr-only">Release delivery</dt><dd class="num" data-count="95" data-suffix="%">95%</dd><dd class="stat-cap">on-time delivery while leading cross-functional releases</dd><dd class="stat-src">Join.com · 2024</dd></div>
+        <div class="stat"><dt class="sr-only">Database queries</dt><dd class="num" data-count="1000" data-suffix="×">1000×</dd><dd class="stat-cap">faster critical database queries</dd><dd class="stat-src">Join.com · 2024</dd></div>
+        <div class="stat"><dt class="sr-only">Inter-service efficiency</dt><dd class="num" data-count="50" data-suffix="%">50%</dd><dd class="stat-cap">more efficient inter-service communication through gRPC APIs</dd><dd class="stat-src">Join.com · 2023</dd></div>
+        <div class="stat"><dt class="sr-only">Production bugs</dt><dd class="num" data-count="60" data-suffix="%">60%</dd><dd class="stat-cap">fewer production bugs by building a testing culture</dd><dd class="stat-src">Pixsy · 2022</dd></div>
+        <div class="stat stat-word"><dt class="sr-only">Architecture</dt><dd class="num">Bare metal</dd><dd class="stat-cap">led the move to microservices and bare metal for performance and cost</dd><dd class="stat-src">Sonect · 2021</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec sec-first" id="work" data-spy="work" aria-labelledby="do-h">
+    <div class="wrap rv">
+      <div class="sec-head"><p class="label"><b>01</b>What I do</p><h2 class="h2" id="do-h">The systems and habits that let teams release with confidence.</h2></div>
+      <div class="cols3">
+        <article class="card do">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="6" cy="5.5" r="2.5"/><circle cx="6" cy="18.5" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M6 8v8M8.2 6.8c3.6 1 6 2.7 7.6 4"/></svg></div>
+          <h3 class="h3">Release engineering</h3>
+          <p class="p">I own the release process end to end, balancing speed with stability and compliance. Database migrations and CI/CD are treated as part of the product, not an afterthought.</p>
+          <ul class="pills"><li class="pill">Release management</li><li class="pill">CI/CD</li><li class="pill">DB migrations</li></ul>
+        </article>
+        <article class="card do">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7.5 10l3 2-3 2M13 15h3.5"/></svg></div>
+          <h3 class="h3">Developer experience</h3>
+          <p class="p">I set the vision and roadmap for developer platform and release tooling. Manual steps become automated, self-service workflows that engineers run themselves.</p>
+          <ul class="pills"><li class="pill">Internal tooling</li><li class="pill">Self-service</li><li class="pill">Platform roadmap</li></ul>
+        </article>
+        <article class="card do">
+          <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/><path d="M10 6.5h4M17.5 10v4"/></svg></div>
+          <h3 class="h3">Architecture and leadership</h3>
+          <p class="p">I lead the architecture of new platform services, with trade-offs and risks assessed up front. I coach engineers and build a code review culture that keeps quality high.</p>
+          <ul class="pills"><li class="pill">System design</li><li class="pill">Risk assessment</li><li class="pill">Mentoring</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec feature-wrap" id="now" data-spy="work" aria-labelledby="deel-h">
+    <div class="wrap rv">
+      <div class="sec-head"><p class="label"><b>02</b>Now</p><h2 class="h2" id="deel-h">Leading release management and developer experience at Deel.</h2></div>
+      <article class="card feature">
+        <div class="feature-side">
+          <span class="now-chip">Since Sep 2025</span>
+          <p class="co-big">Deel</p>
+          <ul class="meta"><li>Technical Lead</li><li>Release engineering team</li><li>Globally distributed org</li><li><a href="https://www.deel.com" target="_blank" rel="noopener">deel.com <span aria-hidden="true">↗</span></a></li></ul>
         </div>
-        <div class="callout">
-          <p>Book a 15-minute intro call</p>
-          <a target="_blank" href="https://cal.com/kostiantyn-denysov-soycqg/15min?user=kostiantyn-denysov-soycqg&overlayCalendar=true" class="button--primary">My calendar</a>
+        <div class="feature-main">
+          <ol class="outcomes">
+            <li><span class="n" aria-hidden="true">01</span><span>An AI-driven deployment pipeline replacing the legacy release process: large, infrequent releases with manual sign-offs give way to frequent deploys with AI risk-scoring and automated error tracing.</span></li>
+            <li><span class="n" aria-hidden="true">02</span><span>A team of release managers and engineers, led and coached to run delivery for a large, globally distributed engineering organization.</span></li>
+            <li><span class="n" aria-hidden="true">03</span><span>One end-to-end release process that keeps speed, stability and compliance in balance.</span></li>
+            <li><span class="n" aria-hidden="true">04</span><span>A developer platform and release tooling roadmap that replaces manual steps with automated, self-service workflows.</span></li>
+            <li><span class="n" aria-hidden="true">05</span><span>Architecture of new platform services, led from first design.</span></li>
+            <li><span class="n" aria-hidden="true">06</span><span>A blameless incident review practice that turns lessons into lasting improvements.</span></li>
+          </ol>
+          <p class="closing">Partnering with engineering leadership and product teams to help everyone ship faster and safer.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec" id="experience" data-spy="experience" aria-labelledby="exp-h">
+    <div class="wrap rv">
+      <div class="sec-head"><p class="label"><b>03</b>Experience</p><h2 class="h2" id="exp-h">Ten years from fullstack engineer to leading a release engineering team.</h2></div>
+      <ol class="tl">
+        <li class="tl-item tl-now">
+          <div class="tl-date">Sep 2025 – present</div>
+          <div class="tl-body">
+            <p class="tl-co"><a href="https://www.deel.com" target="_blank" rel="noopener">Deel</a></p>
+            <h3 class="tl-role">Technical Lead</h3>
+            <ul class="bul">
+              <li>Building an AI-driven deployment pipeline that replaces manual release sign-offs with frequent deploys, AI risk-scoring and automated error tracing.</li>
+              <li>Leads and coaches a team of release managers and engineers.</li>
+              <li>Owns the end-to-end release process, balancing speed with stability and compliance.</li>
+              <li>Sets the roadmap for developer platform and release tooling, replacing manual steps with self-service workflows.</li>
+              <li>Leads architecture of new platform services and runs blameless incident reviews.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="tl-item tl-compact">
+          <div class="tl-date">Feb – Aug 2025</div>
+          <div class="tl-body"><p class="tl-line"><a href="https://www.enpal.de" target="_blank" rel="noopener">Enpal</a> · Senior Backend Engineer <span class="muted">· event-driven services with .NET, MongoDB and Azure</span></p></div>
+        </li>
+        <li class="tl-item tl-compact">
+          <div class="tl-date">Sep 2024 – Feb 2025</div>
+          <div class="tl-body"><p class="tl-line"><b>Freelance</b> · Backend Engineer (contract) <span class="muted">· internal tools and data pipelines for early-stage startups, all projects delivered as scoped</span></p></div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-date">Dec 2022 – Sep 2024</div>
+          <div class="tl-body">
+            <p class="tl-co"><a href="https://join.com" target="_blank" rel="noopener">Join.com</a></p>
+            <p class="progress"><span>Senior Backend</span><span class="to" aria-hidden="true">→</span><span class="cur">Staff Engineer</span></p>
+            <div class="sub-role sub-role-first">
+              <div class="sub-role-head"><h3 class="tl-role">Staff Engineer</h3><span class="mono muted">Feb – Sep 2024</span></div>
+              <ul class="bul">
+                <li>Refactored application processing and introduced permission-based access, <span class="m">application volume up 15%</span>.</li>
+                <li>Delivered gRPC, Docker and Kubernetes microservices, <span class="m">system performance up 25%</span>.</li>
+                <li>Led cross-functional releases with <span class="m">95% on-time delivery</span>.</li>
+              </ul>
+            </div>
+            <div class="sub-role">
+              <div class="sub-role-head"><h3 class="tl-role">Senior Backend Software Engineer</h3><span class="mono muted">Dec 2022 – Jan 2024</span></div>
+              <ul class="bul"><li>Designed gRPC APIs between backend systems, <span class="m">inter-service communication efficiency up 50%</span>.</li></ul>
+            </div>
+            <ul class="bul" style="margin-top:18px"><li>Across both roles: optimized critical database queries by <span class="m">up to 1000×</span>.</li></ul>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-date">Sep 2021 – Dec 2022</div>
+          <div class="tl-body">
+            <p class="tl-co"><a href="https://www.pixsy.com" target="_blank" rel="noopener">Pixsy</a></p>
+            <h3 class="tl-role">Senior Software Engineer</h3>
+            <p class="tl-sum">Core services for image copyright protection.</p>
+            <ul class="bul">
+              <li>Improved image comparison accuracy and cut <span class="m">manual analysis overhead by 50%</span>.</li>
+              <li>Built a testing culture that brought <span class="m">60% fewer production bugs</span>.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-date">Mar 2020 – Aug 2021</div>
+          <div class="tl-body">
+            <p class="tl-co"><a href="https://www.sonect.net" target="_blank" rel="noopener">Sonect AG</a></p>
+            <h3 class="tl-role">Backend Technical Lead</h3>
+            <ul class="bul">
+              <li>Led a white-label fintech solution for BNL.</li>
+              <li>Migrated to microservices and to bare metal for performance and cost gains.</li>
+              <li>Integrated with EU financial systems.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="tl-item tl-compact">
+          <div class="tl-date">May 2019 – Mar 2020</div>
+          <div class="tl-body"><p class="tl-line"><a href="https://www.billbeez.com" target="_blank" rel="noopener">BillBeez</a> · Backend Technical Lead <span class="muted">· multichannel bill payments for small businesses, ACH and Payoneer integrations, secure REST APIs</span></p></div>
+        </li>
+        <li class="tl-item tl-compact">
+          <div class="tl-date">Oct 2017 – May 2019</div>
+          <div class="tl-body"><p class="tl-line"><a href="https://www.thomascook.com" target="_blank" rel="noopener">Thomas Cook</a> · Fullstack Software Engineer <span class="muted">· smart search and recommendations for personalized travel booking</span></p></div>
+        </li>
+        <li class="tl-item tl-compact">
+          <div class="tl-date">Jan 2016 – 2017</div>
+          <div class="tl-body">
+            <details class="acc">
+              <summary><span>Earlier career <span class="mono muted">· 3 roles</span></span><span class="acc-plus" aria-hidden="true">+</span></summary>
+              <ul class="acc-list">
+                <li><span class="mono">2017</span><span>Eze.tech · contract</span></li>
+                <li><span class="mono">2017</span><span>Intersog · contract</span></li>
+                <li><span class="mono">Jan 2016 – Apr 2017</span><span><a href="https://www.leantegra.com" target="_blank" rel="noopener">Leantegra</a> · real-time location and analytics platform, Angular to React migration</span></li>
+              </ul>
+            </details>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="projects" data-spy="projects" aria-labelledby="proj-h">
+    <div class="wrap rv">
+      <div class="sec-head"><p class="label"><b>04</b>Selected projects</p><h2 class="h2" id="proj-h">Things I build outside work, with the same care.</h2></div>
+      <div class="projects">
+        <article class="card proj">
+          <div class="proj-vis vis-mc">
+            <div class="phone" aria-hidden="true">
+              <div class="phone-top"><span>Diary</span><span>dim mode</span></div>
+              <p class="phone-title">This month</p>
+              <div class="cal">
+                <span class="cal-wd">M</span><span class="cal-wd">T</span><span class="cal-wd">W</span><span class="cal-wd">T</span><span class="cal-wd">F</span><span class="cal-wd">S</span><span class="cal-wd">S</span>
+                <i></i><i></i><i></i><i class="a"></i><i></i><i></i><i class="m"></i>
+                <i></i><i></i><i></i><i></i><i class="a"></i><i class="a"></i><i></i>
+                <i></i><i class="m"></i><i></i><i></i><i></i><i class="a"></i><i></i>
+                <i></i><i></i><i class="m"></i><i class="t"></i><i></i><i></i><i class="a"></i>
+                <i></i><i></i><i class="m"></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="phone-row"><span class="chip">HIT-6</span><span class="chip">MIDAS</span><span class="chip">MSQ-21</span></div>
+              <div class="phone-row"><span class="chip">Doctor summary ready</span></div>
+              <div class="phone-cta">Log attack</div>
+            </div>
+            <p class="illus">Illustration, not real data</p>
+          </div>
+          <div class="proj-text">
+            <p class="proj-kicker"><span class="dot live" aria-hidden="true"></span>Live</p>
+            <h3 class="proj-name">Migraine.Club</h3>
+            <p class="proj-url">migraine.club</p>
+            <p class="p">An evidence-first, privacy-first migraine diary that turns one-tap attack logs into doctor-ready summaries built on validated measures, with honest confidence labels and a dim mode for bad days.</p>
+            <ul class="pills"><li class="pill">PWA</li><li class="pill">Privacy-first</li><li class="pill">HIT-6 · MIDAS · MSQ-21</li></ul>
+            <a class="btn btn-secondary proj-link" href="https://www.migraine.club" target="_blank" rel="noopener">Visit migraine.club <span class="arr" aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="card proj proj-rev">
+          <div class="proj-vis vis-pa">
+            <div class="term" aria-hidden="true">
+              <div class="term-bar"><i></i><i></i><i></i><span>parley · council</span></div>
+              <div class="term-body">
+                <div><span class="d">$</span> parley debate $TICKER</div>
+                <div class="rule"></div>
+                <div class="tr"><span class="d">persona_1</span><span class="buy">BUY</span><span>0.72</span><span></span></div>
+                <div class="tr"><span class="d">persona_2</span><span class="hold">HOLD</span><span>0.58</span><span></span></div>
+                <div class="tr"><span class="d">persona_3</span><span class="buy">BUY</span><span>0.66</span><span></span></div>
+                <div class="tr"><span class="d">persona_4</span><span class="sell">SELL</span><span>0.61</span><span class="d">dissent</span></div>
+                <div class="tr"><span class="d">persona_5</span><span class="hold">HOLD</span><span>0.54</span><span></span></div>
+                <div class="tr"><span class="d">persona_6</span><span class="buy">BUY</span><span>0.69</span><span></span></div>
+                <div class="rule"></div>
+                <div class="tr verdict"><span>verdict</span><span class="buy">BUY</span><span>0.64</span><span class="d">1 dissent</span></div>
+              </div>
+            </div>
+            <p class="illus">Illustration, not a real verdict</p>
+          </div>
+          <div class="proj-text">
+            <p class="proj-kicker"><span class="dot" aria-hidden="true"></span>Open source</p>
+            <h3 class="proj-name">Parley</h3>
+            <p class="proj-url">parley.trading</p>
+            <p class="p">An open-source, local-first terminal app where a council of six AI investor personas debates your stocks and returns a confidence-weighted BUY, SELL or HOLD verdict, dissent shown. Keyboard-first, educational only.</p>
+            <ul class="pills"><li class="pill">Terminal UI</li><li class="pill">Local-first</li><li class="pill">Keyboard-first</li></ul>
+            <a class="btn btn-secondary proj-link" href="https://parley.trading" target="_blank" rel="noopener">Visit parley.trading <span class="arr" aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+
+        <article class="card proj">
+          <div class="proj-vis vis-lo">
+            <div class="lo" aria-hidden="true">
+              <div class="lo-src">
+                <span class="lo-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg>Gmail</span>
+                <span class="lo-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2.5h6.5A2.5 2.5 0 0 1 21 10v6.5A2.5 2.5 0 0 1 18.5 19h-13A2.5 2.5 0 0 1 3 16.5z"/></svg>Drive</span>
+                <span class="lo-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6M5 12c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8"/></svg>Supabase</span>
+              </div>
+              <svg class="lo-wire" viewBox="0 0 300 48" preserveAspectRatio="none"><path d="M50 0C50 30 150 18 150 48"/><path d="M150 0V48"/><path d="M250 0C250 30 150 18 150 48"/></svg>
+              <div class="lo-core"><b>Claude Life OS</b><span>index · track · remind</span></div>
+              <svg class="lo-wire lo-wire-short" viewBox="0 0 300 28" preserveAspectRatio="none"><path d="M150 0V28"/></svg>
+              <div class="lo-brief">
+                <div class="lo-brief-h"><span>Daily brief</span><span>3 deadlines</span></div>
+                <div class="lo-row"><span class="lo-due soon">5d</span><span class="lo-t"><b>Tax office letter</b><i>reply due</i></span><span class="lo-tag">letter</span></div>
+                <div class="lo-row"><span class="lo-due soon">12d</span><span class="lo-t"><b>Rental contract</b><i>notice period ends</i></span><span class="lo-tag">contract</span></div>
+                <div class="lo-row"><span class="lo-due">4mo</span><span class="lo-t"><b>Passport</b><i>expires</i></span><span class="lo-tag">document</span></div>
+              </div>
+            </div>
+            <p class="illus">Illustration, not real data</p>
+          </div>
+          <div class="proj-text">
+            <p class="proj-kicker"><span class="dot" aria-hidden="true"></span>Open source · MIT</p>
+            <h3 class="proj-name">Claude Life OS</h3>
+            <p class="proj-url">github.com/denysovkos/claude-life-os</p>
+            <p class="p">An open-source Claude skill that turns Gmail, Google Drive and Supabase into a personal paperwork system that tracks documents, contracts and deadlines. Documented in 10 languages.</p>
+            <ul class="pills"><li class="pill">Claude skill</li><li class="pill">Gmail · Drive · Supabase</li><li class="pill">10 languages</li></ul>
+            <a class="btn btn-secondary proj-link" href="https://github.com/denysovkos/claude-life-os" target="_blank" rel="noopener">View on GitHub <span class="arr" aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="how-h">
+    <div class="wrap rv">
+      <div class="sec-head"><p class="label"><b>05</b>How I work</p><h2 class="h2" id="how-h">Four habits I bring to every team.</h2></div>
+      <ul class="principles">
+        <li class="principle"><span class="big-n" aria-hidden="true">01</span><h3 class="h3">Blameless reviews</h3><p class="p">Incident reviews look at systems, not people, and every lesson becomes a lasting improvement.</p></li>
+        <li class="principle"><span class="big-n" aria-hidden="true">02</span><h3 class="h3">Automate the manual step</h3><p class="p">A step someone has to remember is a step that gets replaced with self-service automation.</p></li>
+        <li class="principle"><span class="big-n" aria-hidden="true">03</span><h3 class="h3">Trade-offs on paper</h3><p class="p">Options, risks and the reasoning behind a choice are written down before anything gets built.</p></li>
+        <li class="principle"><span class="big-n" aria-hidden="true">04</span><h3 class="h3">Async first</h3><p class="p">Clear written context by default, so a globally distributed team can move without waiting for a meeting.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="stack-h">
+    <div class="wrap rv">
+      <div class="sec-head"><p class="label"><b>06</b>Stack</p><h2 class="h2" id="stack-h">Tools I reach for.</h2></div>
+      <div class="stack">
+        <div class="stack-g"><span class="label">Languages</span><ul class="stack-list"><li>TypeScript, JavaScript<span>expert</span></li><li>Go<span>proficient</span></li><li>C# / .NET<span>proficient</span></li><li>SQL</li><li>Bash</li></ul></div>
+        <div class="stack-g"><span class="label">Cloud and infra</span><ul class="stack-list"><li>AWS, GCP, Azure</li><li>Docker</li><li>Kubernetes</li><li>Terraform</li><li>Pulumi</li></ul></div>
+        <div class="stack-g"><span class="label">Data and messaging</span><ul class="stack-list"><li>PostgreSQL</li><li>MongoDB</li><li>Kafka</li><li>RabbitMQ</li><li>gRPC</li></ul></div>
+        <div class="stack-g"><span class="label">Practices</span><ul class="stack-list"><li>Release management, CI/CD</li><li>Database migrations</li><li>Incident reviews</li><li>System design, risk assessment</li><li>Mentoring, code review</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLACEHOLDER sections, hidden by default. Remove `hidden` only once real, attributable content exists. -->
+  <section class="sec no-print" id="writing" aria-labelledby="writing-h" hidden>
+    <div class="wrap"><div class="sec-head"><p class="label">Writing and talks</p><h2 class="h2" id="writing-h">Writing and talks</h2></div></div>
+  </section>
+  <section class="sec no-print" id="testimonials" aria-labelledby="testimonials-h" hidden>
+    <div class="wrap"><div class="sec-head"><p class="label">Testimonials</p><h2 class="h2" id="testimonials-h">What colleagues say</h2></div></div>
+  </section>
+
+  <section class="contact" id="contact" data-spy="contact" aria-labelledby="contact-h">
+    <div class="wrap rv">
+      <div class="cta-block">
+        <div class="cta-in">
+          <p class="label"><b>07</b>Contact</p>
+          <h2 class="contact-h" id="contact-h">Let's talk about shipping faster and <span class="u">safer</span>.</h2>
+          <div class="contact-row">
+            <a class="btn btn-bright" href="https://cal.com/kostiantyn-denysov-soycqg/15min?user=kostiantyn-denysov-soycqg&amp;overlayCalendar=true" target="_blank" rel="noopener">Book a 15-minute intro call <span class="arr" aria-hidden="true">→</span></a>
+            <span class="mono">cal.com · 15 min</span>
+          </div>
+          <div class="contact-sec">
+            <!-- Email is assembled by script.js from data-u and data-d, so the address never appears as plain text in the HTML. -->
+            <a href="#contact" data-email data-u="k" data-d="denysov.me">Email</a>
+            <a href="https://denysov.me/denysov_k_cv.pdf" download>Download CV</a>
+            <a href="https://www.linkedin.com/in/denysovkos/" target="_blank" rel="noopener me">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/denysovkos" target="_blank" rel="noopener me">GitHub <span aria-hidden="true">↗</span></a>
+            <button type="button" class="contact-btn" data-share>Share this page</button>
+            <button type="button" class="contact-btn" data-vcard>Save contact</button>
+          </div>
+          <p class="share-status mono" role="status" aria-live="polite"></p>
         </div>
       </div>
     </div>
-    <div class="changelog">
-      <div class="wrapper">
-        <h3 class="section__title">Changelog</h3>
+  </section>
+</main>
 
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://www.deel.com" target="_blank">Deel</a><br/>
-            <h4 class="changelog__title">Technical Lead</h4>
-            <small class="changelog__date">September 2025 - *</small>
-          </div>
-          <div class="changelog__detail">
-            Leading release management and developer experience for a large, globally distributed engineering organization.
-            <ul>
-              <li>Leading and coaching a team of release managers and engineers, building a high-trust, high-ownership culture</li>
-              <li>Owning the end-to-end release process, balancing delivery speed with stability and compliance</li>
-              <li>Setting the vision and roadmap for developer platform and release tooling, replacing manual steps with automated, self-service workflows</li>
-              <li>Leading architecture and technical design of new platform services</li>
-              <li>Running a blameless incident review practice that turns lessons learned into lasting improvements</li>
-            </ul>
-            Partnering with engineering leadership and product teams to help everyone ship faster and safer.
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://www.enpal.de" target="_blank">Enpal</a><br/>
-            <h4 class="changelog__title">Senior Backend Engineer</h4>
-            <small class="changelog__date">February 2025 - August 2025</small>
-          </div>
-          <div class="changelog__detail">
-            Delivered scalable, event-driven services using .NET, MongoDB and Azure.
-            <ul>
-              <li>Built critical features with a focus on maintainability and performance</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            Freelance<br/>
-            <h4 class="changelog__title">Backend Engineer (Contract)</h4>
-            <small class="changelog__date">September 2024 - February 2025</small>
-          </div>
-          <div class="changelog__detail">
-            Led architecture and delivery of internal tools and data pipelines for early-stage startups.
-            <ul>
-              <li>Delivered all projects as scoped</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://join.com" target="_blank">Join.com</a><br/>
-            <h4 class="changelog__title">Staff Engineer</h4>
-            <small class="changelog__date">February 2024 - September 2024</small>
-          </div>
-          <div class="changelog__detail">
-            Led high-impact initiatives and mentored engineers to drive scalable backend architecture.
-            <ul>
-              <li>Refactored application processing and introduced permission-based access, increasing application volume by 15%</li>
-              <li>Delivered a gRPC, Docker and Kubernetes microservices architecture, boosting system performance by 25%</li>
-              <li>Led cross-functional releases with a 95% on-time delivery rate</li>
-              <li>Optimized critical database queries, achieving up to 1000x performance gains</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://join.com" target="_blank">Join.com</a><br/>
-            <h4 class="changelog__title">Senior Backend Software Engineer</h4>
-            <small class="changelog__date">December 2022 - January 2024</small>
-          </div>
-          <div class="changelog__detail">
-            Developed scalable backend services primarily in TypeScript.
-            <ul>
-              <li>Designed gRPC APIs between backend systems, improving inter-service communication efficiency by 50%</li>
-              <li>Optimized critical database operations, achieving up to 1000x faster query execution</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://www.pixsy.com" target="_blank">Pixsy</a><br/>
-            <h4 class="changelog__title">Senior Software Engineer</h4>
-            <small class="changelog__date">September 2021 - December 2022</small>
-          </div>
-          <div class="changelog__detail">
-            Built core services for copyright protection of images.
-            <ul>
-              <li>Developed image comparison algorithms, significantly improving match accuracy</li>
-              <li>Automated data analysis workflows, reducing manual overhead by 50%</li>
-              <li>Established a testing culture, cutting production bugs by 60%</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://www.sonect.net" target="_blank">Sonect AG</a><br/>
-            <h4 class="changelog__title">Backend Technical Lead</h4>
-            <small class="changelog__date">March 2020 - August 2021</small>
-          </div>
-          <div class="changelog__detail">
-            Delivered a white-label fintech solution for BNL and led the migration to microservices.
-            <ul>
-              <li>Migrated infrastructure to bare metal for performance and cost gains</li>
-              <li>Integrated with EU financial systems and promoted high code quality standards</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://www.billbeez.com" target="_blank">BillBeez</a><br/>
-            <h4 class="changelog__title">Backend Technical Lead</h4>
-            <small class="changelog__date">May 2019 - March 2020</small>
-          </div>
-          <div class="changelog__detail">
-            Launched a multichannel bill payment platform for small businesses on Node.js and MySQL microservices.
-            <ul>
-              <li>Integrated ACH and Payoneer to extend payment capabilities</li>
-              <li>Designed secure RESTful APIs and performance-tuned backend processes</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://www.thomascook.com" target="_blank">Thomas Cook</a><br/>
-            <h4 class="changelog__title">Fullstack Software Engineer</h4>
-            <small class="changelog__date">October 2017 - May 2019</small>
-          </div>
-          <div class="changelog__detail">
-            Developed smart search and recommendation features for personalized travel bookings.
-            <ul>
-              <li>Built web applications with Angular, React and TypeScript</li>
-              <li>Designed RESTful APIs with Node.js and Express on MySQL and MongoDB</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            Eze.tech &amp; Intersog<br/>
-            <h4 class="changelog__title">Software Engineer (Contracts)</h4>
-            <small class="changelog__date">April 2017 - October 2017</small>
-          </div>
-          <div class="changelog__detail">
-            Short consulting engagements in e-commerce and data privacy.
-            <ul>
-              <li>Built backend systems and REST APIs for a ticket reselling platform</li>
-              <li>Built GDPR-aligned personal data search for the Prefender project</li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-
-        <div class="changelog__item">
-          <div class="changelog__meta">
-            <a href="https://www.leantegra.com" target="_blank">Leantegra</a><br/>
-            <h4 class="changelog__title">Software Engineer</h4>
-            <small class="changelog__date">January 2016 - April 2017</small>
-          </div>
-          <div class="changelog__detail">
-            Migrated the CVO portal from Angular to React and built a real-time location and analytics platform.
-            <ul>
-              <li>Full-stack development with Node.js, Express, MySQL, PostgreSQL and MongoDB</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="projects">
-      <div class="wrapper">
-        <h3 class="section__title">Projects</h3>
-        <div class="feature">
-          <div class="feature__item">
-            <h3 class="section__title"><a href="https://www.migraine.club" target="_blank" class="link link--light">Migraine.Club</a></h3>
-            <p>Migraine diary and insights for people living with migraine</p>
-          </div>
-          <div class="feature__item">
-            <h3 class="section__title"><a href="https://parley.trading" target="_blank" class="link link--light">Parley</a></h3>
-            <p>Terminal-native, local-first app where a council of AI investor agents debates your stocks</p>
-          </div>
-          <div class="feature__item">
-            <h3 class="section__title"><a href="https://github.com/denysovkos/claude-life-os" target="_blank" class="link link--light">Claude Life OS</a></h3>
-            <p>Personal paperwork system on Claude, Gmail, Google Drive and Supabase that tracks documents, contracts and deadlines</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      Made with 💛💙 by Mr. K <br />
-      Email: k@denysov.me
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="scribbler.js"></script>
-  </body>
+<footer class="foot">
+  <div class="wrap"><div class="foot-grid">
+    <div class="foot-a"><div><p class="mono">Berlin · <span data-clock>CET</span></p><p>Europe/Berlin</p></div></div>
+    <div class="foot-b"><p>Ukrainian, English, German, Russian</p><p class="edu">BSc Computer Science, Kyiv Polytechnic Institute · MSc Finance, Kyiv National Economic University</p></div>
+    <div class="foot-c"><p>Made with 💛💙 by Mr. K.</p></div>
+  </div></div>
+</footer>
+</body>
 </html>
