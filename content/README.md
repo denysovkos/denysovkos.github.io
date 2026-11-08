@@ -27,6 +27,12 @@ A post with a future `date` is merged but stays unpublished. The `Blog` GitHub A
 
 The social image `blog/<slug>/og.png` is generated once with Playwright. Delete it and rebuild to regenerate it.
 
-## Style
+## Style, topics and facts
 
-Posts follow ASD-STE100 (Simplified Technical English) where it helps the reader: short sentences, active voice, one idea per sentence, one topic per paragraph, common words.
+- `STYLE.md`: the mandatory writing style. ASD-STE100 plus human-voice rules. `npm run lint:posts` checks the rules a script can check, and CI runs it on every PR.
+- `TOPICS.md`: the topic pool and queue. The weekly writer takes the next `queued` topic.
+- `NOTES.md`: the experience bank. Posts use only personal facts from here or from the public site. Add real stories to it, because they make the posts sound like you.
+
+## Weekly writer
+
+A scheduled Claude task runs every Sunday morning (Europe/Berlin). It writes the next post from the queue, dated the coming Tuesday, and opens a PR on a `blog/` branch. You get a push notification and a Todoist task. Review the PR, confirm the claims it lists, and merge it before Tuesday 07:00. The Blog workflow publishes it on Tuesday morning.

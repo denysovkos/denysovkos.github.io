@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node scripts/build-blog.mjs",
     "check": "node scripts/build-blog.mjs --check",
-    "new": "node scripts/new-post.mjs"
+    "new": "node scripts/new-post.mjs",
+    "lint:posts": "node scripts/lint-posts.mjs"
   },
   "engines": {
     "node": ">=20"

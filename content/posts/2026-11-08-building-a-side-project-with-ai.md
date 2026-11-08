@@ -10,7 +10,7 @@ ogTitle: Building a side project with AI
 ogKicker: 7 rules that work
 ---
 
-I build side projects with AI tools. Three of them are live now: [Migraine.Club](https://www.migraine.club), a migraine diary that makes summaries for doctors, [Parley](https://parley.trading), a terminal app where AI investor personas debate a stock, and [Claude Life OS](https://github.com/denysovkos/claude-life-os), a Claude skill for personal paperwork.
+I build side projects with AI tools. Three of them are live now. [Migraine.Club](https://www.migraine.club) is a migraine diary that makes summaries for doctors. [Parley](https://parley.trading) is a terminal app where AI investor personas debate a stock. [Claude Life OS](https://github.com/denysovkos/claude-life-os) is a Claude skill for personal paperwork.
 
 AI did not build these projects for me. It changed how I build them. Some things got much faster. Some things I now do more carefully than before.
 
