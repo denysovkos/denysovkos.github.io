@@ -20,7 +20,6 @@ function personNode(site) {
     url: `${site.url}/`,
     image: `${site.url}/og.png`,
     jobTitle: 'Technical Lead',
-    worksFor: { '@type': 'Organization', name: 'Deel', url: 'https://www.deel.com' },
     sameAs: ['https://www.linkedin.com/in/denysovkos/', 'https://github.com/denysovkos'],
   };
 }
