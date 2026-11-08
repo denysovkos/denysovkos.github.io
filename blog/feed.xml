@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>Blog · Kostiantyn Denysov</title>
+  <subtitle>Short, practical posts on release engineering, developer experience, engineering leadership and building with AI. By Kostiantyn Denysov, Berlin.</subtitle>
+  <id>https://denysov.me/blog/</id>
+  <link rel="self" type="application/atom+xml" href="https://denysov.me/blog/feed.xml"/>
+  <link rel="alternate" type="text/html" href="https://denysov.me/blog/"/>
+  <updated>2026-11-08T09:00:00+01:00</updated>
+  <author><name>Kostiantyn Denysov</name><uri>https://denysov.me/</uri></author>
+  <icon>https://denysov.me/icon-192.png</icon>
+  <rights>© Kostiantyn Denysov</rights>
+  <entry>
+    <title>How I build side projects with AI: 7 rules that work</title>
+    <id>https://denysov.me/blog/building-a-side-project-with-ai/</id>
+    <link rel="alternate" type="text/html" href="https://denysov.me/blog/building-a-side-project-with-ai/"/>
+    <published>2026-11-08T09:00:00+01:00</published>
+    <updated>2026-11-08T09:00:00+01:00</updated>
+    <summary>How I build real side projects with AI coding tools, and what I recommend. Keep the scope small, write the spec first, test everything, and stay the engineer.</summary>
+    <category term="AI"/>
+    <category term="Side projects"/>
+    <category term="Engineering"/>
+    <content type="html">&lt;p&gt;I build side projects with AI tools. Three of them are live now: &lt;a href=&quot;https://www.migraine.club&quot; rel=&quot;noopener&quot;&gt;Migraine.Club&lt;/a&gt;, a migraine diary that makes summaries for doctors, &lt;a href=&quot;https://parley.trading&quot; rel=&quot;noopener&quot;&gt;Parley&lt;/a&gt;, a terminal app where AI investor personas debate a stock, and &lt;a href=&quot;https://github.com/denysovkos/claude-life-os&quot; rel=&quot;noopener&quot;&gt;Claude Life OS&lt;/a&gt;, a Claude skill for personal paperwork.&lt;/p&gt;
+&lt;p&gt;AI did not build these projects for me. It changed how I build them. Some things got much faster. Some things I now do more carefully than before.&lt;/p&gt;
+&lt;p&gt;Here are the seven rules that I follow. Each rule has what I do, and what I recommend to you.&lt;/p&gt;
+&lt;h2 id=&quot;1-start-with-a-problem-not-with-a-tool&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#1-start-with-a-problem-not-with-a-tool&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;1. Start with a problem, not with a tool&lt;/h2&gt;
+&lt;p&gt;I never start with &amp;quot;I want to build something with AI&amp;quot;. I start with a problem that I, or people near me, have.&lt;/p&gt;
+&lt;p&gt;Migraine.Club started with one question. How can a person show their doctor clear data about their migraines? Every feature answers that question: the one-tap log, the doctor summary, and the dim mode for bad days.&lt;/p&gt;
+&lt;p&gt;My recommendation: write your problem in one sentence before you open any tool. When the problem is clear, the AI gets clear instructions. When the problem is not clear, the AI writes a lot of code that nobody needs.&lt;/p&gt;
+&lt;h2 id=&quot;2-write-the-spec-before-the-prompt&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#2-write-the-spec-before-the-prompt&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;2. Write the spec before the prompt&lt;/h2&gt;
+&lt;p&gt;AI is fast. A bad plan also becomes code fast.&lt;/p&gt;
+&lt;p&gt;Now I write a short spec before I ask for code. It is one page or less. It has four parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;who the user is, and what their problem is,&lt;/li&gt;
+&lt;li&gt;what the feature must do,&lt;/li&gt;
+&lt;li&gt;what the feature must not do,&lt;/li&gt;
+&lt;li&gt;how I will know that it works.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Then I give the spec to the AI. The result is much better. And I have something to check the result against.&lt;/p&gt;
+&lt;p&gt;My recommendation: keep the specs in the repository, next to the code. The next prompt can use them too.&lt;/p&gt;
+&lt;h2 id=&quot;3-keep-each-task-small&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#3-keep-each-task-small&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;3. Keep each task small&lt;/h2&gt;
+&lt;p&gt;I give the AI one small task at a time. &amp;quot;Add a button that exports the last 30 days as a PDF&amp;quot; is a good task. &amp;quot;Build the reports module&amp;quot; is not a good task.&lt;/p&gt;
+&lt;p&gt;Small tasks give small diffs. I can read a small diff in two minutes. Nobody really reads a diff with 2,000 lines. That is how bugs get into production.&lt;/p&gt;
+&lt;p&gt;My recommendation: if you cannot describe the task in two sentences, split it. Release engineering taught me the same rule. Small changes are safe changes.&lt;/p&gt;
+&lt;h2 id=&quot;4-you-are-still-the-engineer&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#4-you-are-still-the-engineer&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;4. You are still the engineer&lt;/h2&gt;
+&lt;p&gt;The AI writes the code. I own the code.&lt;/p&gt;
+&lt;p&gt;I read every diff. I run it. I ask &amp;quot;why?&amp;quot; when something looks strange. If I cannot explain a piece of code, I do not merge it.&lt;/p&gt;
+&lt;p&gt;AI sounds very sure, also when it is wrong. It can use an API that does not exist. It can remove a check &amp;quot;to make the code simpler&amp;quot;.&lt;/p&gt;
+&lt;p&gt;My recommendation: review AI code like code from a new colleague. Be friendly, but check everything. You are the last check before your users.&lt;/p&gt;
+&lt;h2 id=&quot;5-let-the-tests-decide&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#5-let-the-tests-decide&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;5. Let the tests decide&lt;/h2&gt;
+&lt;p&gt;For me, tests are the best way to agree with an AI about what &amp;quot;correct&amp;quot; means.&lt;/p&gt;
+&lt;p&gt;I ask for the tests first, or together with the code. Then I run them. When a test fails, I give the error output back to the AI. This loop is fast and honest. A test does not care how sure the answer sounds.&lt;/p&gt;
+&lt;p&gt;This is very important in Migraine.Club. The app shows scores like HIT-6 and MIDAS. A wrong score is worse than no score.&lt;/p&gt;
+&lt;p&gt;My recommendation: everything that calculates or stores data needs tests with known inputs and known results, before real people see it.&lt;/p&gt;
+&lt;h2 id=&quot;6-make-the-hard-decisions-yourself&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#6-make-the-hard-decisions-yourself&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;6. Make the hard decisions yourself&lt;/h2&gt;
+&lt;p&gt;Some decisions are not for the AI: privacy, security, the data model, and what the product promises to its users.&lt;/p&gt;
+&lt;p&gt;Migraine.Club is privacy-first. I made that decision on day one, and it shaped everything after it. Parley is local-first for a similar reason. A tool does not know what your users trust you with.&lt;/p&gt;
+&lt;p&gt;My recommendation: write these decisions in your spec as rules. Then the AI follows them, and you can see quickly when it does not.&lt;/p&gt;
+&lt;h2 id=&quot;7-ship-early-then-make-it-better&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#7-ship-early-then-make-it-better&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;7. Ship early, then make it better&lt;/h2&gt;
+&lt;p&gt;A side project that is not online helps nobody. I put a first version live as soon as it does one thing well.&lt;/p&gt;
+&lt;p&gt;Real users show you what is important. Usually it is not what you expected. Parley is a terminal app. It does not need a website to be useful.&lt;/p&gt;
+&lt;p&gt;My recommendation: pick the smallest form that works. A small web app or a command-line tool is enough for version one.&lt;/p&gt;
+&lt;h2 id=&quot;what-ai-changed-for-me&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#what-ai-changed-for-me&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;What AI changed for me&lt;/h2&gt;
+&lt;p&gt;Before AI tools, my side projects often stopped in the boring middle part. Forms, settings pages, configuration, glue code. Now that part takes evenings, not weeks.&lt;/p&gt;
+&lt;p&gt;So my time goes to the parts that matter: the problem, the decisions and the review.&lt;/p&gt;
+&lt;p&gt;I think of AI as a very fast junior colleague. I give it clear tasks. I check its work. I keep the responsibility.&lt;/p&gt;
+&lt;h2 id=&quot;my-checklist&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#my-checklist&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;My checklist&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;One problem, in one sentence.&lt;/li&gt;
+&lt;li&gt;A one-page spec before the first prompt.&lt;/li&gt;
+&lt;li&gt;One small task per prompt.&lt;/li&gt;
+&lt;li&gt;Read and run every diff.&lt;/li&gt;
+&lt;li&gt;Tests for everything that calculates or stores data.&lt;/li&gt;
+&lt;li&gt;Privacy and security decisions made by you.&lt;/li&gt;
+&lt;li&gt;A live first version, as early as possible.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Do you build something with AI in your free time? &lt;a href=&quot;https://denysov.me/#contact&quot;&gt;Tell me about it&lt;/a&gt;. I read every message.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

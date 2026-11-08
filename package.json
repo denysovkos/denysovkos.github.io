@@ -1,0 +1,17 @@
+{
+  "name": "denysov.me",
+  "private": true,
+  "type": "module",
+  "description": "Personal site and blog of Kostiantyn Denysov. Static HTML, the blog is generated from Markdown.",
+  "scripts": {
+    "build": "node scripts/build-blog.mjs",
+    "check": "node scripts/build-blog.mjs --check",
+    "new": "node scripts/new-post.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "marked": "18.1.3"
+  }
+}
