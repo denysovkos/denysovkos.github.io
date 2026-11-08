@@ -1,0 +1,56 @@
+# Builds the blog from content/posts and commits the generated HTML.
+#
+# - On pull requests: fails if the committed output is out of date ("npm run build" was not run).
+# - On push to master and every morning: builds and commits, so posts with a future
+#   date go live on their date without anyone touching the repository.
+name: Blog
+
+on:
+  pull_request:
+    paths: ['content/**', 'scripts/**', 'index.html', 'llms.txt', 'package*.json', '.github/workflows/blog.yml']
+  push:
+    branches: [master]
+    paths: ['content/**', 'scripts/**', 'package*.json', '.github/workflows/blog.yml']
+  schedule:
+    - cron: '17 5 * * *' # 06:17 / 07:17 Berlin
+  workflow_dispatch:
+
+concurrency:
+  group: blog-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run check
+
+  publish:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Install Playwright only when a post needs an OG image
+        run: |
+          npm run check >/dev/null 2>&1 && exit 0
+          npm i --no-save playwright
+          npx playwright install --with-deps chromium
+      - run: npm run build
+      - name: Commit generated files
+        run: |
+          git add -A blog sitemap.xml index.html llms.txt
+          if git diff --cached --quiet; then echo "Nothing to publish."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish blog: $(date -u +%Y-%m-%d)"
+          git push

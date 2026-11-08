@@ -74,10 +74,12 @@
   function say(t) { if (status) { status.textContent = t; setTimeout(function () { status.textContent = ''; }, 3000); } }
   var shareBtn = document.querySelector('[data-share]');
   if (shareBtn) shareBtn.addEventListener('click', function () {
-    var data = { title: document.title, text: 'Kostiantyn Denysov, Technical Lead, release engineering and developer experience', url: 'https://denysov.me/' };
+    /* Blog posts pass their own URL and title through data attributes. */
+    var url = shareBtn.getAttribute('data-share-url') || 'https://denysov.me/';
+    var data = { title: shareBtn.getAttribute('data-share-title') || document.title, text: shareBtn.getAttribute('data-share-title') || 'Kostiantyn Denysov, Technical Lead, release engineering and developer experience', url: url };
     if (navigator.share) { navigator.share(data).catch(function () {}); return; }
-    if (navigator.clipboard) navigator.clipboard.writeText(data.url).then(function () { say('Link copied: denysov.me'); }, function () { say('denysov.me'); });
-    else say('denysov.me');
+    if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { say('Link copied'); }, function () { say(url); });
+    else say(url);
   });
 
   /* Save contact: vCard built on click, so the address is never a static file */

@@ -9,6 +9,12 @@
 - [GitHub](https://github.com/denysovkos)
 - [Book a 15-minute call](https://cal.com/kostiantyn-denysov-soycqg/15min)
 
+<!-- blog:start -->
+## Blog
+- [All posts](https://denysov.me/blog/): Short, practical posts on release engineering, developer experience, engineering leadership and building with AI. By Kostiantyn Denysov, Berlin.
+- [How I build side projects with AI: 7 rules that work](https://denysov.me/blog/building-a-side-project-with-ai/) (2026-11-08): How I build real side projects with AI coding tools, and what I recommend. Keep the scope small, write the spec first, test everything, and stay the engineer.
+<!-- blog:end -->
+
 ## Focus
 Release management, CI/CD, database migrations, internal developer tooling, blameless incident reviews, system design, mentoring. TypeScript, Node.js, Go, C#/.NET, Kubernetes, Docker, Terraform, Pulumi, AWS, GCP, Azure, Kafka, PostgreSQL, MongoDB.
 
