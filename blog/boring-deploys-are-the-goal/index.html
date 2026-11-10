@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boring deploys are the goal: how to ship safely</title>
+<meta name="description" content="A good release is a non-event. Here is how small batches, automation and fast rollback make deploys boring, and what that looks like on a dashboard.">
+<meta name="author" content="Kostiantyn Denysov">
+<meta name="keywords" content="boring deploys, safe deployments, small batches, fast rollback, release engineering, CI/CD, deployment frequency">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://denysov.me/blog/boring-deploys-are-the-goal/">
+<link rel="alternate" type="application/atom+xml" title="Blog · Kostiantyn Denysov" href="https://denysov.me/blog/feed.xml">
+<link rel="sitemap" type="application/xml" href="https://denysov.me/sitemap.xml">
+<link rel="me" href="https://www.linkedin.com/in/denysovkos/">
+<link rel="me" href="https://github.com/denysovkos">
+<meta name="theme-color" content="#FAF8F4">
+<meta name="color-scheme" content="light dark">
+<meta name="format-detection" content="telephone=no">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://denysov.me/blog/boring-deploys-are-the-goal/">
+<meta property="og:site_name" content="Kostiantyn Denysov">
+<meta property="og:title" content="Boring deploys are the goal">
+<meta property="og:description" content="A good release is a non-event. Here is how small batches, automation and fast rollback make deploys boring, and what that looks like on a dashboard.">
+<meta property="og:image" content="https://denysov.me/blog/boring-deploys-are-the-goal/og.png">
+<meta property="og:image:secure_url" content="https://denysov.me/blog/boring-deploys-are-the-goal/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Boring deploys are the goal, a post by Kostiantyn Denysov">
+<meta property="article:published_time" content="2026-11-10T09:00:00+01:00">
+<meta property="article:modified_time" content="2026-11-10T09:00:00+01:00">
+<meta property="article:author" content="https://denysov.me/">
+<meta property="article:section" content="Release engineering">
+<meta property="article:tag" content="Release engineering">
+<meta property="article:tag" content="CI/CD">
+<meta property="article:tag" content="Engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Boring deploys are the goal">
+<meta name="twitter:description" content="A good release is a non-event. Here is how small batches, automation and fast rollback make deploys boring, and what that looks like on a dashboard.">
+<meta name="twitter:image" content="https://denysov.me/blog/boring-deploys-are-the-goal/og.png">
+<meta name="twitter:image:alt" content="Boring deploys are the goal, a post by Kostiantyn Denysov">
+<meta name="twitter:label1" content="Reading time">
+<meta name="twitter:data1" content="4 min read">
+<meta name="twitter:label2" content="Written by">
+<meta name="twitter:data2" content="Kostiantyn Denysov">
+
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script>
+/* Applies a saved manual theme before first paint, flags JS for reveal styles. */
+(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+<link rel="preload" href="/fonts/instrument-serif-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/blog.css">
+<script src="/script.js" defer></script>
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "BlogPosting",
+   "@id": "https://denysov.me/blog/boring-deploys-are-the-goal/#article",
+   "headline": "Boring deploys are the goal",
+   "alternativeHeadline": "Boring deploys are the goal: how to ship safely",
+   "description": "A good release is a non-event. Here is how small batches, automation and fast rollback make deploys boring, and what that looks like on a dashboard.",
+   "url": "https://denysov.me/blog/boring-deploys-are-the-goal/",
+   "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://denysov.me/blog/boring-deploys-are-the-goal/"
+   },
+   "image": {
+    "@type": "ImageObject",
+    "url": "https://denysov.me/blog/boring-deploys-are-the-goal/og.png",
+    "width": 1200,
+    "height": 630
+   },
+   "datePublished": "2026-11-10T09:00:00+01:00",
+   "dateModified": "2026-11-10T09:00:00+01:00",
+   "author": {
+    "@id": "https://denysov.me/#person",
+    "name": "Kostiantyn Denysov",
+    "url": "https://denysov.me/"
+   },
+   "publisher": {
+    "@id": "https://denysov.me/#person"
+   },
+   "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://denysov.me/blog/#blog",
+    "name": "Blog · Kostiantyn Denysov",
+    "url": "https://denysov.me/blog/"
+   },
+   "inLanguage": "en",
+   "articleSection": "Release engineering",
+   "keywords": "boring deploys, safe deployments, small batches, fast rollback, release engineering, CI/CD, deployment frequency",
+   "wordCount": 964,
+   "timeRequired": "PT4M"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://denysov.me/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Blog",
+     "item": "https://denysov.me/blog/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Boring deploys are the goal",
+     "item": "https://denysov.me/blog/boring-deploys-are-the-goal/"
+    }
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://denysov.me/#person",
+   "name": "Kostiantyn Denysov",
+   "url": "https://denysov.me/",
+   "image": "https://denysov.me/og.png",
+   "jobTitle": "Technical Lead",
+   "sameAs": [
+    "https://www.linkedin.com/in/denysovkos/",
+    "https://github.com/denysovkos"
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body class="blog">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="k-mark" viewBox="0 0 48 48">
+    <mask id="k-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="48" height="48">
+      <rect width="48" height="48" fill="#fff"/>
+      <rect x="12" y="10" width="6.5" height="28" fill="#000"/>
+      <polygon points="21,24 31,10 38.5,10 28.5,24 38.5,38 31,38" fill="#000"/>
+    </mask>
+    <rect width="48" height="48" rx="12" fill="var(--logo-tile)" mask="url(#k-cut)"/>
+    <rect x="36" y="8" width="4" height="4" fill="#7AA2FF"/>
+    <rect x="36" y="36" width="4" height="4" fill="#F5C542"/>
+  </symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="head">
+  <div class="wrap head-in">
+    <a class="brand" href="/">
+      <svg class="logo" aria-hidden="true"><use href="#k-mark"/></svg>
+      <span class="brand-name"><b>K. Denysov</b><span><i>&gt;_</i> technical lead</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="navlink" href="/#work">Work</a>
+      <a class="navlink" href="/#experience">Experience</a>
+      <a class="navlink" href="/#projects">Projects</a>
+      <a class="navlink is-active" href="/blog/" aria-current="true">Blog</a>
+      <a class="navlink" href="/#contact">Contact</a>
+    </nav>
+    <div class="head-actions">
+      <button class="icon-btn theme-head" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="https://cal.com/kostiantyn-denysov-soycqg/15min?user=kostiantyn-denysov-soycqg&amp;overlayCalendar=true" target="_blank" rel="noopener">Book a call</a>
+      <button class="icon-btn menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="sheet">Menu</button>
+    </div>
+  </div>
+  <div class="sheet" id="sheet" hidden>
+    <a href="/#work"><span>Work</span><span class="mono muted" aria-hidden="true">01</span></a>
+    <a href="/#experience"><span>Experience</span><span class="mono muted" aria-hidden="true">03</span></a>
+    <a href="/#projects"><span>Projects</span><span class="mono muted" aria-hidden="true">04</span></a>
+    <a href="/blog/"><span>Blog</span><span class="mono muted" aria-hidden="true">07</span></a>
+    <a href="/#contact"><span>Contact</span><span class="mono muted" aria-hidden="true">08</span></a>
+    <div class="sheet-row"><span class="mono">Theme</span><button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme" style="width:auto;padding:0 16px;font-family:var(--mono);font-size:13px"><span data-theme-name>Light</span></button></div>
+  </div>
+</header>
+
+<main id="main">
+  <article class="post" aria-labelledby="post-h">
+    <header class="wrap post-head">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/blog/">Blog</a></li><li aria-current="page">Boring deploys are the goal</li></ol></nav>
+      <p class="post-meta mono"><time datetime="2026-11-10">10 November 2026</time> · 4 min read</p>
+      <h1 class="post-title" id="post-h">Boring deploys are the goal</h1>
+      <p class="post-lede">A good release is a non-event. Here is how small batches, automation and fast rollback make deploys boring, and what that looks like on a dashboard.</p>
+      <ul class="pills" aria-label="Tags"><li class="pill">Release engineering</li><li class="pill">CI/CD</li><li class="pill">Engineering</li></ul>
+    </header>
+
+    <div class="wrap post-body">
+      <aside class="toc" aria-labelledby="toc-h"><p class="toc-h mono" id="toc-h">On this page</p><ol><li><a href="#why-big-releases-hurt">Why big releases hurt</a></li><li><a href="#small-batches-do-most-of-the-work">Small batches do most of the work</a></li><li><a href="#automate-the-steps-you-fear">Automate the steps you fear</a></li><li><a href="#make-rollback-the-easy-path">Make rollback the easy path</a></li><li><a href="#what-boring-looks-like-on-a-dashboard">What boring looks like on a dashboard</a></li><li><a href="#the-hard-part-is-not-technical">The hard part is not technical</a></li></ol></aside>
+      <div class="prose">
+<p>If your release is exciting, something is wrong. Nobody should clap when a deploy ends. Nobody should hold their breath while it runs.</p>
+<p>I work in release engineering. My job is to make releases dull. I think this is the best compliment a deploy can get: &quot;Did that already go out?&quot;</p>
+<h2 id="why-big-releases-hurt"><a class="anchor" href="#why-big-releases-hurt" aria-hidden="true" tabindex="-1">#</a>Why big releases hurt</h2>
+<p>A big release collects many changes. Each change is small and safe on its own. Together they are a pile that nobody can hold in their head.</p>
+<p>When the pile breaks something, the question is &quot;which change did it?&quot; That question is slow to answer. You have a long diff, many authors, and a clock that runs while users wait.</p>
+<p><a href="https://martinfowler.com/bliki/FrequencyReducesDifficulty.html" rel="noopener">Martin Fowler</a> has a short note on this: when something is painful, do it more often. Pain pushes the team to make the step easier. Rare releases make the pain bigger and the habit weaker.</p>
+<p>I have seen teams react to a bad release with more sign-offs and more meetings. I understand why. But I don&#39;t think it works. A manual sign-off asks a person to judge a huge change in an hour. That person cannot do it well. The ritual only moves the blame.</p>
+<!-- AUTHOR: add one real moment from a big, manually signed-off release (no company or people names): what went wrong, how long it took to find the cause. --><h2 id="small-batches-do-most-of-the-work"><a class="anchor" href="#small-batches-do-most-of-the-work" aria-hidden="true" tabindex="-1">#</a>Small batches do most of the work</h2>
+<p>The best tool I know is also the simplest. Ship less per deploy.</p>
+<p>A deploy with one small change has a short list of suspects. If it fails, the cause is almost always that change. You find it in minutes, not hours. You also revert a small change with little fear.</p>
+<p>This is why I say small changes are safe changes. It is not a slogan for me. It is how I decide where to spend time. I would rather make deploys cheap than make reviews longer.</p>
+<p>Small batches ask for a few habits in the team:</p>
+<ul>
+<li>Merge to the main branch often, in small pieces.</li>
+<li>Keep unfinished work behind a switch, so it can ship but stay off.</li>
+<li>Never let a change wait for a &quot;release day&quot;.</li>
+</ul>
+<h2 id="automate-the-steps-you-fear"><a class="anchor" href="#automate-the-steps-you-fear" aria-hidden="true" tabindex="-1">#</a>Automate the steps you fear</h2>
+<p>Pick the step in your release that makes people nervous. Often it is the step a person does by hand, from memory, once a week. Automate that step first.</p>
+<p>A script does not forget the third item on the checklist. It does the same thing at 10:00 on Tuesday and at 17:45 on Friday. That is what I want from a release. The same result, every time.</p>
+<p>Automation also makes the process visible. You can read it, review it and improve it. A hand-made process lives in one person&#39;s head, and that person goes on holiday.</p>
+<p>I am not saying &quot;remove all humans&quot;. People still decide what to ship and when to stop. But a person should not be the part that carries the steps. A person should be the part that checks the result.</p>
+<h2 id="make-rollback-the-easy-path"><a class="anchor" href="#make-rollback-the-easy-path" aria-hidden="true" tabindex="-1">#</a>Make rollback the easy path</h2>
+<p>Every deploy needs a way back that is faster than the way forward.</p>
+<p>The <a href="https://sre.google/sre-book/release-engineering/" rel="noopener">Google SRE book</a> describes release engineering as a discipline of its own. One idea there matches my own view: releases should be repeatable and automated, so that nobody depends on one person&#39;s tricks.</p>
+<p>Rollback puts this idea to the test. If going back means a long meeting, people will wait and hope. If going back means one command, people will use it early. Early rollback is cheap. Late rollback is a bad day.</p>
+<p>Before any release I ask one question. &quot;How do we undo this, and how long does it take?&quot; If the answer is vague, the release is not ready. Database changes are the hard case here, because a schema change does not always revert as easily as code. I plan those in steps, and I will write about that in a later post.</p>
+<h2 id="what-boring-looks-like-on-a-dashboard"><a class="anchor" href="#what-boring-looks-like-on-a-dashboard" aria-hidden="true" tabindex="-1">#</a>What boring looks like on a dashboard</h2>
+<p>A boring deploy has a clear signature in the data. The <a href="https://dora.dev/guides/dora-metrics-four-keys/" rel="noopener">DORA research</a> names four measures. How often you deploy. How long a change takes to reach production. How often a deploy fails. How fast you recover.</p>
+<p>I look at them as a group. If I only watch speed, I may push teams to rush. If I only watch failures, I may push them to stop deploying. The healthy picture has many small deploys, a short wait from commit to production, few failures, and short recovery.</p>
+<p>On a good day, the dashboard is flat and quiet. The deploy count goes up in small steps. The error line stays where it was. Nobody opens a channel for an incident.</p>
+<p>That flat line is the goal. It looks like nothing happened. A lot of work went into making nothing happen.</p>
+<h2 id="the-hard-part-is-not-technical"><a class="anchor" href="#the-hard-part-is-not-technical" aria-hidden="true" tabindex="-1">#</a>The hard part is not technical</h2>
+<p>I will be honest. The tools are not the main problem. Most teams I know can set up a pipeline.</p>
+<p>The hard part is trust. A manager who has seen a bad release will ask for a gate. A developer who got blamed once will batch changes &quot;to be safe&quot;. Both choices are human, and both make releases riskier.</p>
+<p>So I spend as much time on blameless incident reviews as on pipelines. If a failure leads to blame, people hide risk. If it leads to a fix in the process, people ship smaller things, more often.</p>
+<!-- AUTHOR: add one real example of a team that moved from big releases to frequent deploys, if you have one (numbers only if they are true and public). --><p>What is the most boring deploy you remember? <a href="/#contact">Tell me</a>. I like those stories.</p>
+
+      </div>
+    </div>
+
+    <footer class="wrap post-end">
+      <div class="author card">
+        <svg class="logo author-logo" aria-hidden="true"><use href="#k-mark"/></svg>
+        <div>
+          <p class="author-name">Written by <a href="/">Kostiantyn Denysov</a></p>
+          <p class="p">Technical Lead in Berlin. I write about release engineering, developer experience and building software with AI.</p>
+          <div class="author-row">
+            <a class="btn btn-primary btn-sm" href="https://cal.com/kostiantyn-denysov-soycqg/15min?user=kostiantyn-denysov-soycqg&amp;overlayCalendar=true" target="_blank" rel="noopener">Book a 15-minute call</a>
+            <a class="btn btn-secondary btn-sm" href="https://www.linkedin.com/in/denysovkos/" target="_blank" rel="noopener me">Follow on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="share">
+        <span class="mono muted">Share</span>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fdenysov.me%2Fblog%2Fboring-deploys-are-the-goal%2F" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+        <a href="https://x.com/intent/post?url=https%3A%2F%2Fdenysov.me%2Fblog%2Fboring-deploys-are-the-goal%2F&amp;text=Boring%20deploys%20are%20the%20goal" target="_blank" rel="noopener">X <span aria-hidden="true">↗</span></a>
+        <a href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fdenysov.me%2Fblog%2Fboring-deploys-are-the-goal%2F&amp;t=Boring%20deploys%20are%20the%20goal" target="_blank" rel="noopener">Hacker News <span aria-hidden="true">↗</span></a>
+        <button type="button" class="contact-btn" data-share data-share-url="https://denysov.me/blog/boring-deploys-are-the-goal/" data-share-title="Boring deploys are the goal">Copy link</button>
+        <span class="share-status mono" role="status" aria-live="polite"></span>
+      </div>
+    </footer>
+  </article>
+
+  <nav class="wrap post-nav" aria-label="Older and newer posts">
+    <a class="post-nav-a" href="/blog/building-a-side-project-with-ai/" rel="prev"><span class="mono muted">← Older</span><span>How I build side projects with AI: 7 rules that work</span></a>
+    <span></span>
+  </nav>
+
+  <section class="sec" aria-labelledby="more-h">
+    <div class="wrap">
+      <div class="sec-head"><p class="label">Keep reading</p><h2 class="h2" id="more-h">More posts</h2></div>
+      <div class="posts">
+<article class="post-card">
+  <p class="post-card-meta mono"><time datetime="2026-11-08">8 November 2026</time> · 4 min read</p>
+  <h3 class="post-card-title"><a href="/blog/building-a-side-project-with-ai/">How I build side projects with AI: 7 rules that work</a></h3>
+  <p class="p">How I build real side projects with AI coding tools, and what I recommend. Keep the scope small, write the spec first, test everything, and stay the engineer.</p>
+  <ul class="pills" aria-label="Tags"><li class="pill">AI</li><li class="pill">Side projects</li><li class="pill">Engineering</li></ul>
+</article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap"><div class="foot-grid">
+    <div class="foot-a"><div><p class="mono">Berlin · <span data-clock>CET</span></p><p>Europe/Berlin</p></div></div>
+    <div class="foot-b"><p><a href="/blog/feed.xml">Subscribe via RSS</a> · <a href="/">denysov.me</a></p><p class="edu">Posts are my own views, not those of my employer.</p></div>
+    <div class="foot-c"><p>Made with 💛💙 by Mr. K.</p></div>
+  </div></div>
+</footer>
+</body>
+</html>

@@ -12,6 +12,7 @@
 <!-- blog:start -->
 ## Blog
 - [All posts](https://denysov.me/blog/): Short, practical posts on release engineering, developer experience, engineering leadership and building with AI. By Kostiantyn Denysov, Berlin.
+- [Boring deploys are the goal](https://denysov.me/blog/boring-deploys-are-the-goal/) (2026-11-10): A good release is a non-event. Here is how small batches, automation and fast rollback make deploys boring, and what that looks like on a dashboard.
 - [How I build side projects with AI: 7 rules that work](https://denysov.me/blog/building-a-side-project-with-ai/) (2026-11-08): How I build real side projects with AI coding tools, and what I recommend. Keep the scope small, write the spec first, test everything, and stay the engineer.
 <!-- blog:end -->
 
