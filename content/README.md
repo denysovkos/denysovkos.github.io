@@ -8,7 +8,7 @@ Posts live in `content/posts/` as Markdown. `npm run build` turns them into the 
 2. Write it. Remove `draft: true` when it is ready.
 3. `npm run build`, check `blog/<slug>/index.html` locally (`python3 -m http.server`), commit everything, open a PR.
 
-A post with a future `date` is merged but stays unpublished. The `Blog` GitHub Action builds every morning and publishes it on that date. To keep a weekly rhythm, write a few posts ahead and give them consecutive Monday dates.
+A post with a future `date` is merged but stays unpublished. The `Blog` GitHub Action checks every hour and publishes it shortly after midnight (Berlin) on that date. To keep a weekly rhythm, write a few posts ahead and give them consecutive Monday dates.
 
 ## Front-matter
 
@@ -35,4 +35,4 @@ The social image `blog/<slug>/og.png` is generated once with Playwright. Delete 
 
 ## Weekly writer
 
-A scheduled Claude task runs every Sunday morning (Europe/Berlin). It writes the next post from the queue, dated the coming Tuesday, and opens a PR on a `blog/` branch. You get a push notification and a Todoist task. Review the PR, confirm the claims it lists, and merge it before Tuesday 07:00. The Blog workflow publishes it on Tuesday morning.
+A scheduled Claude task runs every Sunday morning (Europe/Berlin). It writes the next post from the queue, dated the coming Tuesday, and opens a PR on a `blog/` branch. You get a push notification and a Todoist task. Review the PR, confirm the claims it lists, and merge it by Monday evening. The Blog workflow publishes it shortly after midnight on Tuesday. A later merge publishes it within the hour.
