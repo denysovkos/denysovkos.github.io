@@ -27,7 +27,7 @@ Rules for the writer:
 | 2 | in PR 2026-11-10 | SHIP | Boring deploys are the goal | Why a good release is a non-event. Small batches, automation, fast rollback. What "boring" looks like on a dashboard. | `boring-deploys-are-the-goal` |
 | 3 | in PR 2026-11-17 | HEALTH | HIT-6, MIDAS, MSQ-21: what your neurologist asks, in plain words | Explain the three questionnaires, what each measures, why a diary makes them honest. Link primary sources. Not medical advice. | `hit-6-midas-and-msq-21-in-plain-words` |
 | 4 | in PR 2026-11-24 | POV | Who learns to code when AI writes the code? | The junior developer problem. What teams lose when nobody struggles with the basics, and what tech leads can do about it. | `who-learns-to-code-when-ai-writes-the-code` |
-| 5 | queued | SHIP | Database migrations without downtime, explained simply | Expand and contract in four steps, with one small SQL example. The mistakes that cause outages. | |
+| 5 | in PR 2026-12-01 | SHIP | Database migrations without downtime, explained simply | Expand and contract in four steps, with one small SQL example. The mistakes that cause outages. | `database-migrations-without-downtime-explained-simply` |
 | 6 | queued | BUILD | I let six AI personas argue about a stock | How Parley works, why debate beats one answer, why it is educational only, what local-first means here. | |
 | 7 | queued | CAREER | From fullstack developer to tech lead: what I would tell myself ten years ago | Five honest lessons. What mattered less than I thought. | needs notes: 2 to 3 real moments |
 | 8 | in PR 2026-12-08 | POV | Code review when half the code is AI-written | What changes for the reviewer. Review intent, not syntax. Smaller PRs, stronger tests. | `code-review-when-half-the-code-is-ai-written` |
