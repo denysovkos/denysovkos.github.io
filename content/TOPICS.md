@@ -30,7 +30,7 @@ Rules for the writer:
 | 5 | queued | SHIP | Database migrations without downtime, explained simply | Expand and contract in four steps, with one small SQL example. The mistakes that cause outages. | |
 | 6 | queued | BUILD | I let six AI personas argue about a stock | How Parley works, why debate beats one answer, why it is educational only, what local-first means here. | |
 | 7 | queued | CAREER | From fullstack developer to tech lead: what I would tell myself ten years ago | Five honest lessons. What mattered less than I thought. | needs notes: 2 to 3 real moments |
-| 8 | queued | POV | Code review when half the code is AI-written | What changes for the reviewer. Review intent, not syntax. Smaller PRs, stronger tests. | |
+| 8 | in PR 2026-12-08 | POV | Code review when half the code is AI-written | What changes for the reviewer. Review intent, not syntax. Smaller PRs, stronger tests. | `code-review-when-half-the-code-is-ai-written` |
 | 9 | queued | HEALTH | Health data is not ad data | Why a migraine diary must be privacy-first. What "privacy-first" means in practice, in plain words. | |
 | 10 | queued | SHIP | Blameless incident reviews: find causes, not people | How to run one, the questions that work, how lessons become real changes. | |
 | 11 | queued | BUILD | Claude, Gmail and German paperwork | Why I built Claude Life OS. Letters, deadlines, Kündigungsfristen. Paperwork as a systems problem. | |
