@@ -5,10 +5,53 @@
   <id>https://denysov.me/blog/</id>
   <link rel="self" type="application/atom+xml" href="https://denysov.me/blog/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://denysov.me/blog/"/>
-  <updated>2026-11-17T09:00:00+01:00</updated>
+  <updated>2026-11-24T09:00:00+01:00</updated>
   <author><name>Kostiantyn Denysov</name><uri>https://denysov.me/</uri></author>
   <icon>https://denysov.me/icon-192.png</icon>
   <rights>© Kostiantyn Denysov</rights>
+  <entry>
+    <title>Who learns to code when AI writes the code?</title>
+    <id>https://denysov.me/blog/who-learns-to-code-when-ai-writes-the-code/</id>
+    <link rel="alternate" type="text/html" href="https://denysov.me/blog/who-learns-to-code-when-ai-writes-the-code/"/>
+    <published>2026-11-24T09:00:00+01:00</published>
+    <updated>2026-11-24T09:00:00+01:00</updated>
+    <summary>AI writes the easy code that junior developers used to learn on. What teams lose when nobody struggles with the basics, and what tech leads can do.</summary>
+    <category term="AI"/>
+    <category term="Engineering"/>
+    <category term="Mentoring"/>
+    <content type="html">&lt;p&gt;Most of us learned to code on boring tickets. A form that did not validate. A query that was slow. A bug that only happened on Fridays. Today an AI tool closes most of those tickets in a minute.&lt;/p&gt;
+&lt;p&gt;That is good for the backlog. I am not sure it is good for the people who should learn from those tickets.&lt;/p&gt;
+&lt;p&gt;I lead release engineering and developer experience, and I mentor engineers. I also use AI tools every day. I call AI a very fast junior colleague. So here is the question that bothers me. If the fast junior colleague takes all the junior work, where do the next seniors come from?&lt;/p&gt;
+&lt;h2 id=&quot;the-easy-tickets-were-the-school&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#the-easy-tickets-were-the-school&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;The easy tickets were the school&lt;/h2&gt;
+&lt;p&gt;Nobody planned it this way, but the small tasks were the training. A junior developer got a simple bug. They read code they did not write. They added a log line, ran it, and were wrong twice. On the third try they understood the system a little better.&lt;/p&gt;
+&lt;p&gt;That slow loop built three things that I look for in a senior engineer. They can read unfamiliar code. They can debug without a guess. They know when a result looks wrong before a test tells them.&lt;/p&gt;
+&lt;p&gt;AI tools skip the loop. You describe the problem and get a fix that often works. You learn that the fix works. You do not learn why the bug was there.&lt;/p&gt;
+&lt;h2 id=&quot;juniors-will-learn-faster-with-ai&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#juniors-will-learn-faster-with-ai&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;&amp;quot;Juniors will learn faster with AI&amp;quot;&lt;/h2&gt;
+&lt;p&gt;This is the most common answer I hear, and I partly agree. A patient tool that explains any line of code is a great teacher. I wish I had one ten years ago.&lt;/p&gt;
+&lt;p&gt;But &amp;quot;can learn&amp;quot; and &amp;quot;does learn&amp;quot; are different things. In early 2026, Anthropic published &lt;a href=&quot;https://www.anthropic.com/research/AI-assistance-coding-skills&quot; rel=&quot;noopener&quot;&gt;a small randomised study&lt;/a&gt; with 52 mostly junior engineers. They learned a Python library that was new to them. One group had an AI assistant, and one group wrote the code by hand.&lt;/p&gt;
+&lt;p&gt;The AI group finished about two minutes faster, and that difference was not significant. On the quiz after the task, the AI group scored 50% and the hand-coding group scored 67%. The biggest gap was on debugging questions.&lt;/p&gt;
+&lt;p&gt;The detail I find most useful is in the same study. Some people in the AI group still scored well. They asked for explanations, or they asked only conceptual questions and fixed their own errors. The people who handed the whole task to the AI scored the lowest.&lt;/p&gt;
+&lt;p&gt;So the tool is not the problem. The way people use it is the problem. A junior under deadline pressure will usually take the fastest path. Most people would.&lt;/p&gt;
+&lt;h2 id=&quot;we-will-not-need-many-juniors-anyway&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#we-will-not-need-many-juniors-anyway&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;&amp;quot;We will not need many juniors anyway&amp;quot;&lt;/h2&gt;
+&lt;p&gt;The second answer is colder. AI writes the simple code, so teams hire fewer juniors. Some data points that way. A &lt;a href=&quot;https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf&quot; rel=&quot;noopener&quot;&gt;Stanford paper by Brynjolfsson, Chandar and Chen&lt;/a&gt; found that employment fell for young workers in jobs where AI can automate tasks. Software developers are in that group. The authors say the results are early and do not prove a cause.&lt;/p&gt;
+&lt;p&gt;I think this answer is wrong even if the hiring numbers are right. Every senior engineer was a junior first. A team that stops training juniors spends its seniors and does not replace them. The bill arrives years later, when nobody remembers why.&lt;/p&gt;
+&lt;p&gt;There is a second problem. The work does not get simpler for the seniors, because somebody must still review the AI output.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&quot;https://arxiv.org/abs/2507.09089&quot; rel=&quot;noopener&quot;&gt;study from METR&lt;/a&gt; gave experienced open-source developers real tasks in their own large projects. Before the study they expected AI to make them 24% faster. With AI, they were 19% slower. Reviewing and fixing the AI suggestions took much of the time.&lt;/p&gt;
+&lt;p&gt;Review is a senior skill. It needs exactly the judgement that the boring tickets used to build.&lt;/p&gt;
+&lt;h2 id=&quot;what-the-struggle-teaches&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#what-the-struggle-teaches&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;What the struggle teaches&lt;/h2&gt;
+&lt;p&gt;I want to be precise here. I do not think pain is good on its own. Nobody needs to write a CSV parser by hand to become a good engineer.&lt;/p&gt;
+&lt;p&gt;The useful struggle is smaller and more specific. It is the moment when you have a theory, you test it, and the result says you are wrong. That moment builds a mental model of the system. An AI fix that works on the first try removes that moment.&lt;/p&gt;
+&lt;!-- AUTHOR: add one real moment from mentoring (no names, no company): a junior who learned something because they struggled, or one who got stuck because AI did the work. --&gt;&lt;p&gt;In release engineering I see the same pattern from the other side. Incidents happen in the space between what the code does and what people think it does. An engineer who never debugged by hand has a bigger space like that. I can&amp;#39;t prove that with data. It is what I expect, and it worries me.&lt;/p&gt;
+&lt;h2 id=&quot;what-tech-leads-can-do&quot;&gt;&lt;a class=&quot;anchor&quot; href=&quot;#what-tech-leads-can-do&quot; aria-hidden=&quot;true&quot; tabindex=&quot;-1&quot;&gt;#&lt;/a&gt;What tech leads can do&lt;/h2&gt;
+&lt;p&gt;Don&amp;#39;t ban AI tools for juniors. That is silly, and they will use them anyway. Change what you ask for instead.&lt;/p&gt;
+&lt;p&gt;Ask juniors to explain each change in the pull request, in their own words. What was wrong, and why does this fix it? If the explanation is vague, talk before the merge. The code may be fine. The understanding is what you review.&lt;/p&gt;
+&lt;p&gt;Keep some tasks for learning. A small, real bug with no deadline is the best kind. The rule is simple. Find the cause first, then use any tool for the fix.&lt;/p&gt;
+&lt;p&gt;Ask for the tests before the code. I think tests are the honest way to agree on what &amp;quot;correct&amp;quot; means. A junior who writes the test first must understand the problem before the AI touches it. I use the same habit in &lt;a href=&quot;https://denysov.me/blog/building-a-side-project-with-ai/&quot;&gt;my own side projects with AI&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Pair with them on debugging. Not on features, on bugs. Watching how someone else forms a theory teaches more than a long document.&lt;/p&gt;
+&lt;p&gt;None of this is new. It is normal mentoring. The difference is that the work no longer teaches by default. Now somebody has to plan it.&lt;/p&gt;
+&lt;p&gt;If you are a junior developer, use AI to ask &amp;quot;why?&amp;quot; more often than &amp;quot;fix this&amp;quot;. If you lead a team, who in your team is learning right now, and on which tasks? &lt;a href=&quot;https://denysov.me/#contact&quot;&gt;Tell me how you do it&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>HIT-6, MIDAS and MSQ-21 in plain words</title>
     <id>https://denysov.me/blog/hit-6-midas-and-msq-21-in-plain-words/</id>
